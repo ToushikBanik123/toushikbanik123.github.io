@@ -788,15 +788,19 @@ img.live-widget.errored + .widget-fallback { display: flex; }
   /* 5-column anchor strip → single column */
   .swiss-anchor { min-height: auto; }
 
-  /* 3-col stack inventory grid → single column */
+  /* 3-col grids → single column */
   section [style*="repeat(3,1fr)"],
-  section [style*="repeat(3, 1fr)"] {
+  section [style*="repeat(3, 1fr)"],
+  div[style*="repeat(3,1fr)"],
+  div[style*="repeat(3, 1fr)"] {
     grid-template-columns: 1fr !important;
   }
 
-  /* Philosophy 3-cell dark grid → single column */
+  /* Philosophy 3-cell dark grid borders */
   section [style*="repeat(3,1fr)"] .hover-cell-dark,
-  section [style*="repeat(3, 1fr)"] .hover-cell-dark {
+  section [style*="repeat(3, 1fr)"] .hover-cell-dark,
+  div[style*="repeat(3,1fr)"] .hover-cell-dark,
+  div[style*="repeat(3, 1fr)"] .hover-cell-dark {
     border-right: none !important;
     border-bottom: 1px solid rgba(255,255,255,0.15) !important;
   }
@@ -921,10 +925,18 @@ code {
   .t-h1 { font-size: clamp(1.8rem, 8vw, 2.5rem) !important; }
   .swiss-footer-grid { grid-template-columns: 1fr; }
   .swiss-footer-col { padding: 16px 0; }
+  .swiss-footer-name { font-size: clamp(2.2rem, 14vw, 4rem); padding: 0 16px 24px; }
   .swiss-card { padding: 20px 16px; }
   .swiss-timeline-item { padding-left: 24px; }
   .contact-popup-panel { padding: 24px 16px !important; }
   .swiss-aside-sticky { position: static !important; }
+  /* DL rows: stack label above value on very small screens */
+  dl > div[style*="display:flex"] { flex-wrap: wrap; }
+  /* Buttons full width on mobile */
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; box-sizing: border-box; }
+  /* Credential cards stack on mobile */
+  .credential-card-grid { grid-template-columns: 1fr !important; }
+  .credential-btn-col { border-right: none !important; border-top: 2px solid var(--swiss-black); }
 }
 
 /* ── Mobile 600px ── */
