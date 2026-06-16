@@ -10,6 +10,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/swiss.css" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <style>
+    /* ── Experience page: mobile fixes ── */
+
+    /* Fix 1: Force timeline cards visible on mobile — bypass JS scroll animation */
+    @media (max-width: 900px) {
+      .swiss-timeline-item {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    /* Fix 2: Timeline layout on mobile — keep dot inside container */
+    @media (max-width: 600px) {
+      .swiss-timeline { padding-left: 24px; margin: 24px 0 40px; }
+      .swiss-timeline-dot { left: -28px; top: 24px; }
+      .swiss-card { padding: 20px 16px; }
+    }
+
+    /* Fix 4: Card header flex row on very small screens */
+    @media (max-width: 480px) {
+      .swiss-card .t-name { font-size: 1.4rem !important; }
+      .swiss-timeline { padding-left: 20px; }
+      .swiss-timeline-dot { left: -24px; width: 10px; height: 10px; }
+    }
+
+    /* Fix 5: Reduce main top padding on mobile */
+    @media (max-width: 600px) {
+      main.container-x { padding-top: 24px !important; }
+    }
+  </style>
 </head>
 <body class="swiss-noise">
 

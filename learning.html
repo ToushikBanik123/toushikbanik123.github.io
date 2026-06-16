@@ -17,8 +17,17 @@
       }
       .credential-btn-col {
         border-right: none !important;
-        border-top: 2px solid var(--swiss-black);
+        border-top: 2px solid var(--swiss-black) !important;
         min-width: 0 !important;
+      }
+    }
+    @media (max-width: 480px) {
+      main.container-x { padding-top: 24px !important; }
+      .credential-card-grid { grid-template-columns: 1fr !important; }
+      .credential-btn-col {
+        border-right: none !important;
+        border-top: 2px solid var(--swiss-black) !important;
+        padding: 16px 20px !important;
       }
     }
   </style>
@@ -184,7 +193,7 @@
       <div>
         <div class="t-label" style="margin-bottom:12px; color:var(--swiss-accent);">GitHub / last 12 months</div>
         <div style="border:2px solid var(--swiss-black); padding:18px; background:var(--swiss-white);">
-          <img class="live-widget" src="https://github-readme-activity-graph.vercel.app/graph?username=ToushikBanik123&bg_color=ffffff&color=000000&line=ff3000&point=000000&area=true&hide_border=true" alt="GitHub contributions heatmap" onerror="this.classList.add('errored')" />
+          <img class="live-widget" src="https://github-readme-activity-graph.vercel.app/graph?username=ToushikBanik123&bg_color=ffffff&color=000000&line=ff3000&point=000000&area=true&hide_border=true" alt="GitHub contributions heatmap" onerror="this.classList.add('errored')" style="max-width:100%; height:auto;" />
           <div class="widget-fallback">
             <a href="https://github.com/ToushikBanik123" target="_blank" rel="noopener" style="color:var(--swiss-black); font-weight:700;">→ github.com/ToushikBanik123</a>
           </div>
@@ -194,7 +203,7 @@
       <div>
         <div class="t-label" style="margin-bottom:12px; color:var(--swiss-accent);">LeetCode / problems</div>
         <div style="border:2px solid var(--swiss-black); padding:18px; background:var(--swiss-white); display:flex; align-items:center; justify-content:center; min-height:180px;">
-          <img class="live-widget" src="https://leetcard.jacoblin.cool/toushikbanikeducation?theme=light&amp;font=Inter&amp;ext=heatmap&amp;title_color=FF3000&amp;icon_color=FF3000&amp;border_radius=0" alt="LeetCode stats" onerror="this.classList.add('errored')" />
+          <img class="live-widget" src="https://leetcard.jacoblin.cool/toushikbanikeducation?theme=light&amp;font=Inter&amp;ext=heatmap&amp;title_color=FF3000&amp;icon_color=FF3000&amp;border_radius=0" alt="LeetCode stats" onerror="this.classList.add('errored')" style="max-width:100%; height:auto;" />
           <div class="widget-fallback">
             <div style="font-size:2.5rem; color:var(--swiss-accent); font-weight:900;">90+</div>
             <div style="margin-top:6px;">SOLVED ON LEETCODE</div>

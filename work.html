@@ -145,6 +145,20 @@
       .col-proj { min-width: 100px; }
       .col-role { display: none; }
       .col-link { width: 56px; }
+      .work-table { font-size: 0.8rem; }
+      .work-table td { padding: 10px 8px 10px 0; }
+      .group-label { font-size: 0.6rem; padding: 20px 0 4px; }
+      .col-yr { width: 36px; font-size: 0.68rem; }
+      .col-stack { display: none; }
+      .col-stack-header { display: none; }
+      .badge-muted { font-size: 0.58rem; padding: 2px 5px; }
+    }
+    @media (max-width: 600px) {
+      .swiss-card[style*="min-height:220px"],
+      .swiss-card[style*="min-height: 220px"] { min-height: 160px !important; }
+    }
+    @media (max-width: 480px) {
+      section[style*="repeat(auto-fit"] > div { padding: 20px 12px !important; }
     }
   </style>
 </head>
@@ -267,7 +281,7 @@
           <th class="col-yr">Year</th>
           <th>Project</th>
           <th class="col-role">Role</th>
-          <th class="col-stack">Stack</th>
+          <th class="col-stack col-stack-header">Stack</th>
           <th class="col-link"></th>
         </tr>
       </thead>

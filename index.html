@@ -11,6 +11,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/swiss.css" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <style>
+    /* ── Fix 1: Hero stats aside → 3-col grid on mobile ── */
+    @media (max-width: 900px) {
+      .mobile-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        border-top: 2px solid var(--swiss-black);
+        border-left: none;
+        padding-left: 0;
+      }
+      .mobile-stats > div {
+        padding: 16px 12px;
+        border-right: 1px solid var(--swiss-black);
+      }
+      .mobile-stats > div:last-child {
+        border-right: none;
+      }
+      .mobile-stats hr {
+        display: none;
+      }
+    }
+    @media (max-width: 480px) {
+      .mobile-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .mobile-stats > div:nth-child(2) {
+        border-right: none;
+      }
+      .mobile-stats > div:nth-child(4) {
+        border-right: none;
+      }
+    }
+
+    /* ── Fix 5: Philosophy section borders collapse on mobile ── */
+    @media (max-width: 900px) {
+      .hover-cell-dark {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+      }
+    }
+  </style>
 </head>
 <body class="swiss-noise">
 
@@ -74,7 +116,7 @@
       </div>
 
       <!-- Right: stats column -->
-      <aside style="border-left:2px solid var(--swiss-black); padding-left:24px; display:flex; flex-direction:column; gap:24px;">
+      <aside class="mobile-stats" style="border-left:2px solid var(--swiss-black); padding-left:24px; display:flex; flex-direction:column; gap:24px;">
         <div>
           <div class="swiss-stat-num">10<span style="color:var(--swiss-accent);">+</span></div>
           <div class="swiss-stat-label">Live apps shipped</div>
@@ -117,19 +159,19 @@
         <h2 class="t-h2" style="margin:0 0 28px;">@ Medjeex / SDE-1 / Full-time</h2>
 
         <dl style="margin:0 0 28px; display:grid; grid-template-columns:1fr; gap:14px;">
-          <div style="display:flex; gap:16px; align-items:baseline; padding-bottom:14px; border-bottom:1px solid rgba(0,0,0,0.12);">
+          <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:baseline; padding-bottom:14px; border-bottom:1px solid rgba(0,0,0,0.12);">
             <dt class="t-label" style="min-width:80px; color:rgba(0,0,0,0.5);">Role scope</dt>
             <dd style="margin:0; font-weight:500; font-size:0.95rem;">Sole mobile developer — zero existing codebase on day one</dd>
           </div>
-          <div style="display:flex; gap:16px; align-items:baseline; padding-bottom:14px; border-bottom:1px solid rgba(0,0,0,0.12);">
+          <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:baseline; padding-bottom:14px; border-bottom:1px solid rgba(0,0,0,0.12);">
             <dt class="t-label" style="min-width:80px; color:rgba(0,0,0,0.5);">Apps shipped</dt>
             <dd style="margin:0; font-weight:700; font-size:0.95rem;">Student app · Guardian · QR Attendance · Teacher console</dd>
           </div>
-          <div style="display:flex; gap:16px; align-items:baseline; padding-bottom:14px; border-bottom:1px solid rgba(0,0,0,0.12);">
+          <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:baseline; padding-bottom:14px; border-bottom:1px solid rgba(0,0,0,0.12);">
             <dt class="t-label" style="min-width:80px; color:rgba(0,0,0,0.5);">Hardest module</dt>
             <dd style="margin:0; font-weight:500; font-size:0.95rem;">Mediasoup SFU live-class stack — flutter_webrtc + Socket.IO + PiP + foreground service</dd>
           </div>
-          <div style="display:flex; gap:16px; align-items:baseline;">
+          <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:baseline;">
             <dt class="t-label" style="min-width:80px; color:rgba(0,0,0,0.5);">AI pipeline</dt>
             <dd style="margin:0; font-weight:500; font-size:0.95rem;">2,000+ lectures → transcribe → summarize → MCQ → flashcard → dual-voice TTS podcast</dd>
           </div>
@@ -506,7 +548,7 @@
       <h2 class="t-h2" style="margin:0;">Go Deeper.</h2>
       <span class="t-label" style="color:rgba(0,0,0,0.5);">05 sections / select your rabbit hole</span>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:0;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:0;">
 
       <a href="about.html" class="swiss-anchor" style="border-right:0;">
         <div class="swiss-anchor-num">01 / About</div>
@@ -563,7 +605,7 @@
           Available for full-time roles — hybrid or on-site — in Delhi NCR or Bengaluru. Open to relocation. Responding within 24 hours.
         </p>
         <div style="display:flex; flex-direction:column; gap:12px; align-items:flex-start;">
-          <a href="mailto:toushikbanikofficial@gmail.com" class="btn-primary" data-copy-email>→ toushikbanikofficial@gmail.com</a>
+          <a href="mailto:toushikbanikofficial@gmail.com" class="btn-primary" data-copy-email title="toushikbanikofficial@gmail.com">→ Send email</a>
           <a href="tel:+919800515347" class="btn-secondary">+91 9800515347</a>
         </div>
         <div style="margin-top:24px; display:flex; gap:16px; flex-wrap:wrap;">
