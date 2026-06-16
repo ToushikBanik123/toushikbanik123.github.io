@@ -75,7 +75,7 @@
     }
     .col-proj {
       font-weight: 700;
-      min-width: 180px;
+      min-width: 120px;
     }
     .col-proj small {
       display: block;
@@ -87,7 +87,7 @@
     .col-role {
       color: rgba(0,0,0,0.6);
       font-size: 0.83rem;
-      min-width: 140px;
+      min-width: 100px;
     }
     .col-stack {
       font-family: 'JetBrains Mono', monospace;
@@ -99,7 +99,7 @@
       white-space: nowrap;
       text-align: right;
       padding-right: 0;
-      width: 90px;
+      width: 70px;
     }
     .col-link a {
       font-family: 'JetBrains Mono', monospace;
@@ -140,6 +140,11 @@
       color: rgba(0,0,0,0.35);
       padding: 28px 0 6px;
       border-top: 2px solid var(--swiss-black);
+    }
+    @media (max-width: 600px) {
+      .col-proj { min-width: 100px; }
+      .col-role { display: none; }
+      .col-link { width: 56px; }
     }
   </style>
 </head>
@@ -186,7 +191,7 @@
   </p>
 
   <!-- Stats strip -->
-  <section style="display:grid; grid-template-columns:repeat(4, 1fr); gap:0; border-top:4px solid var(--swiss-black); border-bottom:4px solid var(--swiss-black); margin-bottom:64px;">
+  <section style="display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:0; border-top:4px solid var(--swiss-black); border-bottom:4px solid var(--swiss-black); margin-bottom:64px;">
     <div style="padding:32px 24px; border-right:1px solid var(--swiss-black);" class="swiss-grid-pattern">
       <div class="swiss-stat-num">08</div>
       <div class="swiss-stat-label">Live on Play / App Store</div>
@@ -211,7 +216,7 @@
       <span class="t-section-num">02.01 / Featured cases</span>
       <span class="t-label">03 deep dives</span>
     </div>
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:24px;">
       <a href="case-medjeex.html" class="swiss-card invert" style="display:flex; flex-direction:column; justify-content:space-between; min-height:220px;">
         <div>
           <div class="t-section-num">Case 01</div>

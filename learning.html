@@ -10,6 +10,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/swiss.css" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <style>
+    @media (max-width: 600px) {
+      .credential-card-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .credential-btn-col {
+        border-right: none !important;
+        border-top: 2px solid var(--swiss-black);
+        min-width: 0 !important;
+      }
+    }
+  </style>
 </head>
 <body class="swiss-noise">
 
@@ -89,7 +101,7 @@
             First-class honours in CSE, with production Flutter apps already live across six companies before the degree was conferred. Core coursework: DSA, OS, DBMS, networks, and software engineering.
           </p>
         </div>
-        <div style="padding:28px 24px; display:flex; flex-direction:column; justify-content:flex-start; gap:8px; min-width:190px;">
+        <div style="padding:28px 24px; display:flex; flex-direction:column; justify-content:flex-start; gap:8px; min-width:0;">
           <a href="https://drive.google.com/file/d/1S01MEqOuqCefk02zGdOidedTC-8kxCYx/view?usp=sharing" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex; white-space:nowrap;">↗ Provisional Cert</a>
           <div class="t-label" style="color:rgba(0,0,0,0.35); font-size:0.62rem; margin-top:4px;">Issued by CGEC / MAKAUT</div>
         </div>
@@ -119,7 +131,7 @@
             </div>
           </div>
         </div>
-        <div style="padding:28px 24px; display:flex; flex-direction:column; justify-content:flex-start; gap:8px; min-width:190px;">
+        <div style="padding:28px 24px; display:flex; flex-direction:column; justify-content:flex-start; gap:8px; min-width:0;">
           <a href="https://drive.google.com/file/d/1keNnt3_5X4xM2eZEMJHw86vjN1hbKhVM/view?usp=drive_link" target="_blank" rel="noopener" class="btn-primary" style="white-space:nowrap;">↗ Mark Sheet</a>
           <div class="t-label" style="color:rgba(0,0,0,0.35); font-size:0.62rem; margin-top:4px;">Issued by WBCHSE</div>
         </div>
@@ -149,7 +161,7 @@
             </div>
           </div>
         </div>
-        <div style="padding:28px 24px; display:flex; flex-direction:column; justify-content:flex-start; gap:8px; min-width:190px;">
+        <div style="padding:28px 24px; display:flex; flex-direction:column; justify-content:flex-start; gap:8px; min-width:0;">
           <a href="https://drive.google.com/file/d/1dESpWcomRdFnvPHT31Err-CWc_uftuPt/view?usp=drive_link" target="_blank" rel="noopener" class="btn-primary" style="white-space:nowrap;">↗ Mark Sheet</a>
           <div class="t-label" style="color:rgba(0,0,0,0.35); font-size:0.62rem; margin-top:4px;">Issued by WBBSE</div>
         </div>
@@ -194,7 +206,7 @@
   </section>
 
   <!-- Numbers row -->
-  <section style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0; border-top:2px solid var(--swiss-black); border-bottom:4px solid var(--swiss-black);">
+  <section style="display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:0; border-top:2px solid var(--swiss-black); border-bottom:4px solid var(--swiss-black);">
     <div class="hover-cell swiss-grid-pattern" style="padding:32px 24px; border-right:1px solid var(--swiss-black);">
       <div class="swiss-stat-num">90<span style="color:var(--swiss-accent);">+</span></div>
       <div class="swiss-stat-label">LeetCode solved</div>
@@ -323,7 +335,7 @@
 
     <h2 class="t-h2" style="margin:0 0 32px;">The tools / I've earned / the right to use.</h2>
 
-    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:0; border-top:2px solid var(--swiss-black); border-bottom:2px solid var(--swiss-black);">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:0; border-top:2px solid var(--swiss-black); border-bottom:2px solid var(--swiss-black);">
       <div class="hover-cell" style="padding:28px 24px; border-right:1px solid var(--swiss-black); border-bottom:1px solid var(--swiss-black);">
         <div class="t-label" style="color:var(--swiss-accent); margin-bottom:8px;">Languages</div>
         <div style="font-family:'JetBrains Mono',monospace; font-size:0.92rem; line-height:1.7;">Dart · C++ · C · Python · Java</div>
