@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medjeex Case Study — Toushik Banik</title>
+  <meta name="description" content="Four apps. 22 feature modules. One mobile dev. The technical monograph on Medjeex: Mediasoup SFU live classes, offline-first test engine, AI mentor pipeline." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/swiss.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+</head>
+<body class="swiss-noise">
+
+<header class="swiss-nav">
+  <div class="swiss-nav-inner">
+    <a href="index.html" class="swiss-monogram" aria-label="Home">TB</a>
+    <nav class="swiss-nav-links" aria-label="Primary">
+      <a href="index.html" class="swiss-nav-link" data-hover="00 / Index"><span>00 / Index</span></a>
+      <a href="about.html" class="swiss-nav-link" data-hover="01 / About"><span>01 / About</span></a>
+      <a href="work.html" class="swiss-nav-link" data-hover="02 / Work"><span>02 / Work</span></a>
+      <a href="systems.html" class="swiss-nav-link" data-hover="03 / Systems"><span>03 / Systems</span></a>
+      <a href="learning.html" class="swiss-nav-link" data-hover="04 / Education"><span>04 / Education</span></a>
+      <a href="experience.html" class="swiss-nav-link" data-hover="05 / Experience"><span>05 / Experience</span></a>
+    </nav>
+    <button id="swiss-hamburger" class="swiss-hamburger" aria-label="Menu">Menu <span class="swiss-hamburger-icon"><span></span><span></span><span></span></span></button>
+    <a href="mailto:toushikbanikofficial@gmail.com" class="swiss-nav-cta">→ Contact</a>
+  </div>
+</header>
+
+<div id="swiss-mobile-menu" class="swiss-mobile-menu">
+  <button id="swiss-mobile-close" class="swiss-mobile-close">Close ×</button>
+  <a href="index.html">00 / Index</a>
+  <a href="about.html">01 / About</a>
+  <a href="work.html">02 / Work</a>
+  <a href="systems.html">03 / Systems</a>
+  <a href="learning.html">04 / Education</a>
+  <a href="experience.html">05 / Experience</a>
+  <a href="mailto:toushikbanikofficial@gmail.com">→ Contact</a>
+</div>
+
+<main class="container-x" style="padding-top:48px;">
+
+  <div class="page-marker">
+    <span class="page-marker-num">03 / Case study</span>
+    <span class="page-marker-title">Medjeex</span>
+  </div>
+
+  <h1 class="t-h1" style="margin:0 0 32px;">Four apps. /<br/>22 modules. /<br/>One mobile dev.</h1>
+  <p class="t-body-lg" style="max-width:48rem; margin:0 0 56px;">
+    Medjeex is a NEET / JEE EdTech startup in Gurugram. I joined as SDE-1 in October 2024 when there was effectively no mobile codebase. ~1.5 years later there are four production Flutter apps in market and the student app has scaled to 1,000+ users.
+  </p>
+
+  <!-- Meta table -->
+  <section style="margin-bottom:80px; border-top:4px solid var(--swiss-black); border-bottom:4px solid var(--swiss-black);">
+    <table class="swiss-table" style="margin:0;">
+      <tbody>
+        <tr>
+          <td class="col-year" style="width:200px;">Role</td>
+          <td class="col-name">SDE-1 · Sole mobile developer</td>
+        </tr>
+        <tr>
+          <td class="col-year">Period</td>
+          <td class="col-name">Oct 2024 — Present (~1.5 yr)</td>
+        </tr>
+        <tr>
+          <td class="col-year">Stack</td>
+          <td class="col-stack" style="font-size:0.9rem;">Flutter · Dart · Provider · go_router · Isar · Socket.IO · mediasfu_mediasoup_client · flutter_webrtc · Razorpay · Shorebird code-push · Firebase (FCM, Analytics, Crashlytics) · Syncfusion PDF · just_audio · pinput · sms_autofill</td>
+        </tr>
+        <tr>
+          <td class="col-year">Outcomes</td>
+          <td class="col-name t-accent">0 → 1,000+ students · 4 live apps · 22 feature modules · 2,000+ lectures processed</td>
+        </tr>
+        <tr>
+          <td class="col-year">Live</td>
+          <td><a href="https://play.google.com/store/apps/details?id=com.medjeex.medjeex_app" target="_blank" rel="noopener" class="t-accent" style="font-weight:700;">Student app on Play Store ↗</a> · <a href="https://play.google.com/store/apps/details?id=com.medjeex.parent.app" target="_blank" rel="noopener" class="t-accent" style="font-weight:700;">Guardian app on Play Store ↗</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 03.01 PROBLEM -->
+  <section style="padding:64px 0; border-bottom:2px solid var(--swiss-black);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:24px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">03.01 / Problem</span>
+      <span class="t-label">Where we started</span>
+    </div>
+    <div class="grid-5-7">
+      <h2 class="t-h2" style="margin:0;">Zero to One. / Scale to / Thousands.</h2>
+      <div class="col-rule">
+        <p class="t-body-lg">
+          Medjeex required a robust mobile ecosystem for NEET and JEE aspirants. The constraints were severe: students often learn from remote areas on intermittent 4G networks. I was tasked with engineering four distinct applications from scratch—a primary student app, a guardian companion, a realtime attendance scanner, and a teacher console. There was no legacy code, no inherited architecture. The technical bar was non-negotiable: test sessions must survive network drops, and live video must degrade gracefully without killing the main thread.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03.02 THE FOUR APPS -->
+  <section style="padding:64px 0; border-bottom:2px solid var(--swiss-black);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:32px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">03.02 / The four apps</span>
+      <span class="t-label">04 surfaces</span>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:0; border-top:2px solid var(--swiss-black);">
+      <div class="hover-cell" style="padding:32px 28px; border-right:1px solid var(--swiss-black); border-bottom:1px solid var(--swiss-black);">
+        <div class="t-section-num">App 01</div>
+        <h3 class="t-h3" style="margin:8px 0 12px;">Student App</h3>
+        <p style="margin:0 0 12px; font-size:0.95rem; line-height:1.6;">The flagship. Auth, courses, live + recorded video, self-test engine, AI mentor, doubt resolution, store, Razorpay commerce. 1,000+ users.</p>
+        <div class="t-mono" style="font-size:0.7rem; letter-spacing:0.06em;">22 modules in lib/features/</div>
+      </div>
+      <div class="hover-cell swiss-dots" style="padding:32px 28px; border-bottom:1px solid var(--swiss-black);">
+        <div class="t-section-num">App 02</div>
+        <h3 class="t-h3" style="margin:8px 0 12px;">Guardian (Parent)</h3>
+        <p style="margin:0 0 12px; font-size:0.95rem; line-height:1.6;">Multi-child linking, realtime QR check-in/out FCM alerts, fl_chart performance trends, weak-area surfacing, course progression.</p>
+        <div class="t-mono" style="font-size:0.7rem; letter-spacing:0.06em;">com.medjeex.parent.app</div>
+      </div>
+      <div class="hover-cell swiss-diagonal" style="padding:32px 28px; border-right:1px solid var(--swiss-black);">
+        <div class="t-section-num">App 03</div>
+        <h3 class="t-h3" style="margin:8px 0 12px;">Attendance (internal)</h3>
+        <p style="margin:0 0 12px; font-size:0.95rem; line-height:1.6;">QR-scan check-in / check-out at the institute. Library access gating. Realtime sync to parent app via FCM.</p>
+        <div class="t-mono" style="font-size:0.7rem; letter-spacing:0.06em;">Staff-facing</div>
+      </div>
+      <div class="hover-cell" style="padding:32px 28px;">
+        <div class="t-section-num">App 04</div>
+        <h3 class="t-h3" style="margin:8px 0 12px;">Teacher Console (internal)</h3>
+        <p style="margin:0 0 12px; font-size:0.95rem; line-height:1.6;">Digitised question bank with chapter / topic / difficulty filters. Instant test creation, link-share, or push directly into a course.</p>
+        <div class="t-mono" style="font-size:0.7rem; letter-spacing:0.06em;">Teacher-facing</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03.03 ARCHITECTURE -->
+  <section style="padding:64px 0; border-bottom:2px solid var(--swiss-black);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:32px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">03.03 / Architecture</span>
+      <span class="t-label">MVVM + Provider + Repository</span>
+    </div>
+
+    <h2 class="t-h2" style="margin:0 0 40px;">The system / underneath.</h2>
+
+    <div style="border:2px solid var(--swiss-black); padding:32px; background:var(--swiss-muted);" class="swiss-grid-pattern">
+
+      <!-- UI -->
+      <div class="t-label" style="margin-bottom:12px;">UI layer / Flutter / go_router</div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px;">
+        <div class="arch-box">meetings/</div>
+        <div class="arch-box">self_test/</div>
+        <div class="arch-box">course/</div>
+        <div class="arch-box">ai_test_mentor/</div>
+      </div>
+      <div class="arch-arrow">↓</div>
+
+      <!-- ViewModel -->
+      <div class="t-label" style="margin-bottom:12px;">ViewModel / Provider</div>
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:8px;">
+        <div class="arch-box">State · subscriptions · lifecycle</div>
+        <div class="arch-box">Caching · pagination · offline queue</div>
+      </div>
+      <div class="arch-arrow">↓</div>
+
+      <!-- Repository -->
+      <div class="t-label" style="margin-bottom:12px;">Repository / source of truth</div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px;">
+        <div class="arch-box accent">Isar (local)</div>
+        <div class="arch-box accent">REST (remote)</div>
+        <div class="arch-box accent">Socket.IO (realtime)</div>
+      </div>
+      <div class="arch-arrow">↓</div>
+
+      <!-- Infra -->
+      <div class="t-label" style="margin-bottom:12px;">Infra / native bridges / platform</div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px;">
+        <div class="arch-box solid">mediasfu_mediasoup_client</div>
+        <div class="arch-box solid">flutter_webrtc + PiP</div>
+        <div class="arch-box solid">razorpay_flutter</div>
+        <div class="arch-box solid">shorebird_code_push</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 03.04 SIX PILLARS -->
+  <section style="padding:64px 0; border-bottom:2px solid var(--swiss-black);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:32px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">03.04 / Pillars</span>
+      <span class="t-label">06 systems</span>
+    </div>
+
+    <h2 class="t-h2" style="margin:0 0 48px;">What's running / inside.</h2>
+
+    <div style="display:flex; flex-direction:column; gap:48px;">
+
+      <!-- Pillar 1 -->
+      <article class="grid-4-8">
+        <div>
+          <div class="t-section-num">03.04.01</div>
+          <h3 class="t-h3" style="margin:8px 0 0;">Live video classes</h3>
+        </div>
+        <div class="col-rule">
+          <p class="t-body-lg">
+            <code>mediasfu_mediasoup_client</code> (a maintained fork picked for WebRTC compatibility) + <code>flutter_webrtc</code> inside Flutter, with Socket.IO signalling. The <code>meetings/</code> module handles participant lobby admission, host admit/remove controls, in-meeting chat and native Picture-in-Picture. An Android foreground service (<code>meeting_foreground_service.dart</code>) keeps the call alive when the app is backgrounded &mdash; otherwise the call drops the moment a student switches apps.
+          </p>
+        </div>
+      </article>
+
+      <!-- Pillar 2 -->
+      <article class="grid-4-8">
+        <div>
+          <div class="t-section-num">03.04.02</div>
+          <h3 class="t-h3" style="margin:8px 0 0;">Offline self-test engine</h3>
+        </div>
+        <div class="col-rule">
+          <p class="t-body-lg">
+            The <code>self_test/</code> module lets students create a test by subject + chapter + difficulty + count. Questions are Isar-cached ahead of time so the entire test runs locally &mdash; MCQ, MSQ, integer-answer, all timed. Grading is deterministic and computed on-device, then synced to the backend post-session. <code>result_comparison_card.dart</code> renders comparative analytics versus prior attempts.
+          </p>
+        </div>
+      </article>
+
+      <!-- Pillar 3 -->
+      <article class="grid-4-8">
+        <div>
+          <div class="t-section-num">03.04.03</div>
+          <h3 class="t-h3" style="margin:8px 0 0;">AI mentor + content pipeline</h3>
+        </div>
+        <div class="col-rule">
+          <p class="t-body-lg">
+            2,000+ lecture recordings are processed once at upload-time: transcript → notes → MCQs → flashcards → two-voice podcast TTS. The <code>ai_test_mentor/</code> module is a separate RAG-style flow inside test analysis &mdash; when a student misses a question, it explains the underlying concept, suggests the relevant lecture clip, and then quizzes them on it. Everything ships as static artefacts; nothing is generated per tap.
+          </p>
+        </div>
+      </article>
+
+      <!-- Pillar 4 -->
+      <article class="grid-4-8">
+        <div>
+          <div class="t-section-num">03.04.04</div>
+          <h3 class="t-h3" style="margin:8px 0 0;">Doubt resolution</h3>
+        </div>
+        <div class="col-rule">
+          <p class="t-body-lg">
+            Tiered escalation: AI responds first inside the <code>doubt/</code> module, peers can upvote or escalate, teachers fall back in if the question gets stuck. Nested threaded comments, filtering, read-caching. My-doubts / saved-doubts / delete-request flows for the student-side of the surface.
+          </p>
+        </div>
+      </article>
+
+      <!-- Pillar 5 -->
+      <article class="grid-4-8">
+        <div>
+          <div class="t-section-num">03.04.05</div>
+          <h3 class="t-h3" style="margin:8px 0 0;">Course delivery</h3>
+        </div>
+        <div class="col-rule">
+          <p class="t-body-lg">
+            Course → Chapter → Lecture hierarchy. Live lectures via the meetings stack with Socket.IO chat. Recorded lectures via <code>youtube_player_flutter</code> + <code>just_audio</code> for the AI podcast track. Syncfusion PDF viewer for notes with AES-encrypted offline delivery. Deep-link sharing via <code>app_links</code> so a teacher can drop a link in a WhatsApp group and a student lands on the right lecture.
+          </p>
+        </div>
+      </article>
+
+      <!-- Pillar 6 -->
+      <article class="grid-4-8">
+        <div>
+          <div class="t-section-num">03.04.06</div>
+          <h3 class="t-h3" style="margin:8px 0 0;">Auth, payments &amp; release</h3>
+        </div>
+        <div class="col-rule">
+          <p class="t-body-lg">
+            JWT + OTP authentication built with <code>pinput</code> and <code>sms_autofill</code>, BCrypt credential hashing, <code>flutter_secure_storage</code> for token persistence. AES-encrypted offline PDFs. <code>razorpay_flutter</code> wired through cart, coupon and wishlist flows. <code>shorebird_code_push</code> for OTA &mdash; same-day Dart hotfixes to 1,000+ active users without Play Store review.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- 03.05 DECISIONS -->
+  <section style="padding:64px 0; border-bottom:2px solid var(--swiss-black);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:32px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">03.05 / Decisions</span>
+      <span class="t-label">06 trade-offs</span>
+    </div>
+
+    <h2 class="t-h2" style="margin:0 0 32px;">Why I picked / what I picked.</h2>
+
+    <div style="border-top:1px solid var(--swiss-black);">
+      <div class="decision">
+        <div class="decision-label">Mediasoup SFU / vs Agora RTC</div>
+        <h3 class="decision-title">Why I built the video stack on Mediasoup, not bought it.</h3>
+        <p class="decision-body">
+          Agora was the obvious managed pick &mdash; I'd already shipped voice rooms on it at Ayla. But at ~30-student class sizes Medjeex needed signalling control we'd never get from a managed SDK: lobby admission, host admit/remove, deterministic PiP behaviour on Android. I went with <code>mediasfu_mediasoup_client</code> (a maintained fork picked for WebRTC compatibility) over the upstream &mdash; owned the Socket.IO signalling surface end-to-end, predictable cost at scale, Flutter binding mature enough to ship.
+        </p>
+      </div>
+      <div class="decision">
+        <div class="decision-label">Isar / vs SQLite</div>
+        <h3 class="decision-title">Why Isar runs the offline test engine.</h3>
+        <p class="decision-body">
+          The test engine downloads 500-question packs ahead of time and grades fully locally. Isar's collection-level encryption protects question banks at rest, schema-migration ergonomics matched how often we iterated, and bulk reads on those packs were faster than SQLite for the access pattern we actually had &mdash; single-table sequential scans of cached questions.
+        </p>
+      </div>
+      <div class="decision">
+        <div class="decision-label">Shorebird OTA / vs Play Store rollouts</div>
+        <h3 class="decision-title">Why same-day hotfix latency was non-negotiable.</h3>
+        <p class="decision-body">
+          A paid 1,000-user EdTech app cannot wait two days for a Play Store review when a live class breaks. Shorebird Flutter code-push gave us hotfix-to-device in hours instead of review cycles. The trade-off &mdash; runtime-only Dart fixes, no native &mdash; was acceptable because most of our regressions lived in UI/state logic, exactly where Shorebird shines.
+        </p>
+      </div>
+      <div class="decision">
+        <div class="decision-label">Offline-first / over Online-with-cache</div>
+        <h3 class="decision-title">Why the Repository was the source of truth, not the API.</h3>
+        <p class="decision-body">
+          NEET/JEE students take tests on patchy networks. Treating the API as truth meant flaky exams; treating Isar as truth meant deterministic grading even when the device went offline mid-test, with a sync queue that replayed to the backend on reconnect. The UI never knows whether data is fresh &mdash; that's the Repository's job.
+        </p>
+      </div>
+      <div class="decision">
+        <div class="decision-label">Server-side pipeline / vs On-device LLM</div>
+        <h3 class="decision-title">Why notes / MCQs / podcast are generated once, not per tap.</h3>
+        <p class="decision-body">
+          Generating per-tap meant unpredictable cost per active student and 5-second waits in the UI. Running the pipeline once per lecture upload &mdash; transcribe, summarise, MCQ-extract, two-voice TTS &mdash; let students treat AI artefacts like any other static asset: cached, instant, downloadable. The mobile app stays a thin consumer of a structured content store.
+        </p>
+      </div>
+      <div class="decision">
+        <div class="decision-label">22 feature modules / over One big lib/</div>
+        <h3 class="decision-title">Why feature modules paid off as the solo dev.</h3>
+        <p class="decision-body">
+          Working alone meant context-switching was the real cost, not coordination. Splitting <code>lib/features/</code> into 22 modules (auth, meetings, self_test, course, doubt, ai_test_mentor, live_quiz, pomodoro, routine, store, quest, &hellip;) let me touch one surface without paging the rest into my head, kept compile times sane, and made shared <code>core/</code> primitives reusable across the student, parent, attendance and teacher apps.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 03.06 OUTCOMES -->
+  <section style="padding:64px 0; border-bottom:4px solid var(--swiss-black);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:32px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">03.06 / Outcomes</span>
+      <span class="t-label">Receipts</span>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:0; border-top:2px solid var(--swiss-black); border-bottom:2px solid var(--swiss-black);">
+      <div class="hover-cell" style="padding:32px 24px; border-right:1px solid var(--swiss-black);">
+        <div class="swiss-stat-num">1,000<span style="color:var(--swiss-accent);">+</span></div>
+        <div class="swiss-stat-label">Students on the app</div>
+      </div>
+      <div class="hover-cell" style="padding:32px 24px; border-right:1px solid var(--swiss-black);">
+        <div class="swiss-stat-num">04</div>
+        <div class="swiss-stat-label">Apps shipped</div>
+      </div>
+      <div class="hover-cell" style="padding:32px 24px; border-right:1px solid var(--swiss-black);">
+        <div class="swiss-stat-num">22</div>
+        <div class="swiss-stat-label">Feature modules</div>
+      </div>
+      <div class="hover-cell" style="padding:32px 24px;">
+        <div class="swiss-stat-num">2,000<span style="color:var(--swiss-accent);">+</span></div>
+        <div class="swiss-stat-label">Lectures processed</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section style="padding:64px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px;">
+    <a href="case-haatak.html" class="btn-secondary">← Next case: Haatak</a>
+    <a href="work.html" class="btn-primary">→ Back to all work</a>
+  </section>
+
+</main>
+
+
+<footer class="swiss-footer">
+  <div class="swiss-footer-name">Toushik / Banik</div>
+  <div class="swiss-footer-grid">
+    <div class="swiss-footer-col">
+      <h4>Index</h4>
+      <ul>
+        <li><a href="index.html">00 / Home</a></li>
+        <li><a href="about.html">01 / About</a></li>
+        <li><a href="work.html">02 / Work</a></li>
+        <li><a href="systems.html">03 / Systems</a></li>
+        <li><a href="learning.html">04 / Education</a></li>
+        <li><a href="experience.html">05 / Experience</a></li>
+      </ul>
+    </div>
+    <div class="swiss-footer-col">
+      <h4>Work</h4>
+      <ul>
+        <li><a href="case-medjeex.html">Medjeex case</a></li>
+        <li><a href="case-haatak.html">Haatak case</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.medjeex.medjeex_app" target="_blank" rel="noopener">Medjeex Student ↗</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.medjeex.parent.app" target="_blank" rel="noopener">Medjeex Guardian ↗</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.copuchin.jarapp" target="_blank" rel="noopener">Haatak ↗</a></li>
+      </ul>
+    </div>
+    <div class="swiss-footer-col">
+      <h4>Profiles</h4>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/toushikbanik/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        <li><a href="https://github.com/ToushikBanik123" target="_blank" rel="noopener">GitHub ↗</a></li>
+        <li><a href="https://leetcode.com/u/toushikbanikeducation/" target="_blank" rel="noopener">LeetCode ↗</a></li>
+        <li><a href="https://takeuforward.org/profile/Toushik" target="_blank" rel="noopener">TakeUForward ↗</a></li>
+      </ul>
+    </div>
+    <div class="swiss-footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:toushikbanikofficial@gmail.com" data-copy-email>toushikbanikofficial@gmail.com</a></li>
+        <li><a href="tel:+919800515347">+91 9800515347</a></li>
+        <li>Delhi NCR / India</li>
+        <li>Open to relocate</li>
+      </ul>
+    </div>
+  </div>
+  <div class="swiss-footer-bottom">
+    <span>© 2026 / Toushik Banik</span>
+    <span>Built with HTML + Grid</span>
+    <span>Delhi NCR / India</span>
+  </div>
+</footer>
+
+<script src="assets/swiss.js"></script>
+</body>
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work — Toushik Banik</title>
+  <meta name="description" content="The full catalogue. Ten-plus shipped apps across six companies — years, roles, stacks, links." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/swiss.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <style>
+    /* ── Work-table overrides ── */
+    .work-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .work-table thead tr {
+      border-bottom: 4px solid var(--swiss-black);
+    }
+    .work-table th {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0 16px 14px 0;
+      text-align: left;
+      white-space: nowrap;
+    }
+    .work-table tbody tr {
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      transition: background 0.12s, color 0.12s;
+      cursor: default;
+    }
+    .work-table tbody tr:hover {
+      background: var(--swiss-accent);
+      color: var(--swiss-white);
+    }
+    .work-table tbody tr:hover .col-yr,
+    .work-table tbody tr:hover .col-role,
+    .work-table tbody tr:hover .col-stack,
+    .work-table tbody tr:hover small,
+    .work-table tbody tr:hover .group-label {
+      color: rgba(255,255,255,0.75);
+    }
+    .work-table tbody tr:hover a {
+      color: var(--swiss-white);
+    }
+    .work-table tbody tr:hover a.link-case {
+      background: var(--swiss-white);
+      color: var(--swiss-accent);
+    }
+    .work-table tbody tr:hover .badge-muted {
+      color: rgba(255,255,255,0.6);
+      border-color: rgba(255,255,255,0.35);
+    }
+    /* group separator */
+    .work-table tbody tr.group-start td {
+      padding-top: 28px;
+    }
+    .work-table td {
+      padding: 14px 16px 14px 0;
+      vertical-align: top;
+      line-height: 1.4;
+    }
+    .col-yr {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: rgba(0,0,0,0.4);
+      white-space: nowrap;
+      width: 48px;
+    }
+    .col-proj {
+      font-weight: 700;
+      min-width: 180px;
+    }
+    .col-proj small {
+      display: block;
+      font-weight: 400;
+      font-size: 0.78rem;
+      color: rgba(0,0,0,0.5);
+      margin-top: 2px;
+    }
+    .col-role {
+      color: rgba(0,0,0,0.6);
+      font-size: 0.83rem;
+      min-width: 140px;
+    }
+    .col-stack {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: rgba(0,0,0,0.55);
+      line-height: 1.6;
+    }
+    .col-link {
+      white-space: nowrap;
+      text-align: right;
+      padding-right: 0;
+      width: 90px;
+    }
+    .col-link a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--swiss-accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    .col-link a:hover { border-color: var(--swiss-accent); }
+    .col-link a.link-case {
+      background: var(--swiss-black);
+      color: var(--swiss-white);
+      padding: 4px 10px;
+      font-size: 0.68rem;
+    }
+    .col-link a.link-case:hover { background: var(--swiss-accent); border-color: transparent; }
+    .badge-muted {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.35);
+      border: 1px solid rgba(0,0,0,0.2);
+      padding: 3px 8px;
+      display: inline-block;
+    }
+    .group-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.35);
+      padding: 28px 0 6px;
+      border-top: 2px solid var(--swiss-black);
+    }
+  </style>
+</head>
+<body class="swiss-noise">
+
+<header class="swiss-nav">
+  <div class="swiss-nav-inner">
+    <a href="index.html" class="swiss-monogram" aria-label="Home">TB</a>
+    <nav class="swiss-nav-links" aria-label="Primary">
+      <a href="index.html" class="swiss-nav-link" data-hover="00 / Index"><span>00 / Index</span></a>
+      <a href="about.html" class="swiss-nav-link" data-hover="01 / About"><span>01 / About</span></a>
+      <a href="work.html" class="swiss-nav-link" data-hover="02 / Work"><span>02 / Work</span></a>
+      <a href="systems.html" class="swiss-nav-link" data-hover="03 / Systems"><span>03 / Systems</span></a>
+      <a href="learning.html" class="swiss-nav-link" data-hover="04 / Education"><span>04 / Education</span></a>
+      <a href="experience.html" class="swiss-nav-link" data-hover="05 / Experience"><span>05 / Experience</span></a>
+    </nav>
+    <button id="swiss-hamburger" class="swiss-hamburger" aria-label="Menu">Menu <span class="swiss-hamburger-icon"><span></span><span></span><span></span></span></button>
+    <a href="mailto:toushikbanikofficial@gmail.com" class="swiss-nav-cta">→ Contact</a>
+  </div>
+</header>
+
+<div id="swiss-mobile-menu" class="swiss-mobile-menu">
+  <button id="swiss-mobile-close" class="swiss-mobile-close">Close ×</button>
+  <a href="index.html">00 / Index</a>
+  <a href="about.html">01 / About</a>
+  <a href="work.html">02 / Work</a>
+  <a href="systems.html">03 / Systems</a>
+  <a href="learning.html">04 / Education</a>
+  <a href="experience.html">05 / Experience</a>
+  <a href="mailto:toushikbanikofficial@gmail.com">→ Contact</a>
+</div>
+
+<main class="container-x" style="padding-top:48px;">
+
+  <div class="page-marker">
+    <span class="page-marker-num">02 / Work</span>
+    <span class="page-marker-title">Production Ledger</span>
+  </div>
+
+  <h1 class="t-h1" style="margin:0 0 32px;">10+ live apps. /<br/>06 companies. /<br/>04 years.</h1>
+
+  <p class="t-body-lg" style="max-width:48rem; margin:0 0 56px;">
+    An unfiltered ledger of my production output — dead products included. If a company wound down or a build was white-labeled, it's stated. Live apps link to store listings.
+  </p>
+
+  <!-- Stats strip -->
+  <section style="display:grid; grid-template-columns:repeat(4, 1fr); gap:0; border-top:4px solid var(--swiss-black); border-bottom:4px solid var(--swiss-black); margin-bottom:64px;">
+    <div style="padding:32px 24px; border-right:1px solid var(--swiss-black);" class="swiss-grid-pattern">
+      <div class="swiss-stat-num">08</div>
+      <div class="swiss-stat-label">Live on Play / App Store</div>
+    </div>
+    <div style="padding:32px 24px; border-right:1px solid var(--swiss-black);">
+      <div class="swiss-stat-num">04</div>
+      <div class="swiss-stat-label">Apps at Medjeex</div>
+    </div>
+    <div style="padding:32px 24px; border-right:1px solid var(--swiss-black);">
+      <div class="swiss-stat-num">5M<span style="color:var(--swiss-accent);">+</span></div>
+      <div class="swiss-stat-label">Downloads reached (Olio)</div>
+    </div>
+    <div style="padding:32px 24px;">
+      <div class="swiss-stat-num">10M<span style="color:var(--swiss-accent);">+</span></div>
+      <div class="swiss-stat-label">Install base reached (JagoBd)</div>
+    </div>
+  </section>
+
+  <!-- Featured cases -->
+  <section style="margin-bottom:72px;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:24px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">02.01 / Featured cases</span>
+      <span class="t-label">03 deep dives</span>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+      <a href="case-medjeex.html" class="swiss-card invert" style="display:flex; flex-direction:column; justify-content:space-between; min-height:220px;">
+        <div>
+          <div class="t-section-num">Case 01</div>
+          <h3 class="t-h2" style="margin:8px 0 12px;">Medjeex</h3>
+          <p style="margin:0;">4 production apps. 22 modules. Mediasoup live-class SFUs, offline-first test engines, AI pipelines.</p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:24px;">
+          <span class="t-label">EdTech · Sole dev · 2025</span>
+          <span style="font-size:1.6rem;">→</span>
+        </div>
+      </a>
+      <a href="case-guardian.html" class="swiss-card invert" style="display:flex; flex-direction:column; justify-content:space-between; min-height:220px;">
+        <div>
+          <div class="t-section-num">Case 02</div>
+          <h3 class="t-h2" style="margin:8px 0 12px;">Guardian</h3>
+          <p style="margin:0;">Parent monitoring companion for Medjeex. Consent-gated child linking, ProxyProvider analytics, real-time FCM alerts.</p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:24px;">
+          <span class="t-label">EdTech · Sole dev · 2025</span>
+          <span style="font-size:1.6rem;">→</span>
+        </div>
+      </a>
+      <a href="case-haatak.html" class="swiss-card invert" style="display:flex; flex-direction:column; justify-content:space-between; min-height:220px;">
+        <div>
+          <div class="t-section-num">Case 03</div>
+          <h3 class="t-h2" style="margin:8px 0 12px;">Haatak</h3>
+          <p style="margin:0;">SafeGold-backed digital gold platform. Full UI rebuild. Razorpay checkout. 10,000+ downloads, sole UI developer.</p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:24px;">
+          <span class="t-label">Fintech · Freelance · 2024</span>
+          <span style="font-size:1.6rem;">→</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Full ledger -->
+  <section style="margin-bottom:80px;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:24px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">02.02 / Full ledger</span>
+      <span class="t-label">Hover a row</span>
+    </div>
+
+    <div style="overflow-x:auto;">
+    <table class="work-table">
+      <thead>
+        <tr>
+          <th class="col-yr">Year</th>
+          <th>Project</th>
+          <th class="col-role">Role</th>
+          <th class="col-stack">Stack</th>
+          <th class="col-link"></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- ── MEDJEEX ── -->
+        <tr class="group-start">
+          <td colspan="5" class="group-label">Medjeex — EdTech startup · 2025</td>
+        </tr>
+        <tr>
+          <td class="col-yr">2025</td>
+          <td class="col-proj">Medjeex Student App<small>1,000+ active users · NEET / JEE prep</small></td>
+          <td class="col-role">Sole mobile dev</td>
+          <td class="col-stack">Flutter · Mediasoup WebRTC · Isar · Socket.IO · go_router · Razorpay · Shorebird OTA</td>
+          <td class="col-link"><a href="case-medjeex.html" class="link-case">Case →</a></td>
+        </tr>
+        <tr>
+          <td class="col-yr">2025</td>
+          <td class="col-proj">Medjeex Guardian<small>Parent monitoring companion</small></td>
+          <td class="col-role">Sole dev</td>
+          <td class="col-stack">Flutter · FCM · fl_chart · go_router · consent-gated child linking</td>
+          <td class="col-link"><a href="case-guardian.html" class="link-case">Case →</a></td>
+        </tr>
+        <tr>
+          <td class="col-yr">2025</td>
+          <td class="col-proj">Medjeex Attendance<small>QR-based check-in · internal tool</small></td>
+          <td class="col-role">Sole dev</td>
+          <td class="col-stack">Flutter · mobile_scanner · go_router · Firebase</td>
+          <td class="col-link"><span class="badge-muted">Internal</span></td>
+        </tr>
+        <tr>
+          <td class="col-yr">2025</td>
+          <td class="col-proj">Medjeex Teacher Console<small>Question bank · instant test dispatch · internal</small></td>
+          <td class="col-role">Sole dev</td>
+          <td class="col-stack">Flutter · Socket.IO · REST · question-bank query</td>
+          <td class="col-link"><span class="badge-muted">Internal</span></td>
+        </tr>
+
+        <!-- ── FREELANCE ── -->
+        <tr class="group-start">
+          <td colspan="5" class="group-label">Freelance — 2024</td>
+        </tr>
+        <tr>
+          <td class="col-yr">2024</td>
+          <td class="col-proj">Haatak — Digital Gold<small>10,000+ downloads · Play + App Store</small></td>
+          <td class="col-role">Sole UI developer</td>
+          <td class="col-stack">Flutter · Provider · SafeGold API · Razorpay · haptic design system</td>
+          <td class="col-link"><a href="case-haatak.html" class="link-case">Case →</a></td>
+        </tr>
+
+        <!-- ── BODHI ── -->
+        <tr class="group-start">
+          <td colspan="5" class="group-label">Bodhi — Astrology platform · 2024</td>
+        </tr>
+        <tr>
+          <td class="col-yr">2024</td>
+          <td class="col-proj">Bodhi<small>10M+ install base · 2-month engagement</small></td>
+          <td class="col-role">Mobile contributor</td>
+          <td class="col-stack">Flutter · STOMP WebSocket chat · Razorpay + Cashfree + Stripe + PayU · astrologer listings</td>
+          <td class="col-link"><span class="badge-muted">Short stint</span></td>
+        </tr>
+
+        <!-- ── INDOMITECH ── -->
+        <tr class="group-start">
+          <td colspan="5" class="group-label">Indomitech — 2023</td>
+        </tr>
+        <tr>
+          <td class="col-yr">2023</td>
+          <td class="col-proj">JagoBd / Bandana TV<small>10M+ install base · 100+ channels</small></td>
+          <td class="col-role">Full TV + mobile player</td>
+          <td class="col-stack">Flutter · VLC · PiP · adaptive streaming · EPG</td>
+          <td class="col-link"><a href="https://play.google.com/store/apps/details?id=com.jagoapp.jagobd" target="_blank" rel="noopener">Play ↗</a></td>
+        </tr>
+        <tr>
+          <td class="col-yr">2023</td>
+          <td class="col-proj">Ayla Voice Chat<small>Social audio / live rooms</small></td>
+          <td class="col-role">Lead chat + social</td>
+          <td class="col-stack">Flutter · Agora RTC · Socket.IO · MVVM · Razorpay · Isar</td>
+          <td class="col-link"><a href="https://play.google.com/store/apps/details?id=com.aylavoice.chatapp" target="_blank" rel="noopener">Play ↗</a></td>
+        </tr>
+        <tr>
+          <td class="col-yr">2023</td>
+          <td class="col-proj">Olio<small>5M+ downloads</small></td>
+          <td class="col-role">Contributor · EY section</td>
+          <td class="col-stack">Flutter · Google Maps · REST</td>
+          <td class="col-link"><a href="https://play.google.com/store/apps/details?id=com.olioex.android" target="_blank" rel="noopener">Play ↗</a></td>
+        </tr>
+        <tr>
+          <td class="col-yr">2023</td>
+          <td class="col-proj">FuturePeak / GyanMeeti</td>
+          <td class="col-role">Feature dev · MCQ + payments</td>
+          <td class="col-stack">Flutter · REST · Razorpay · on-demand video</td>
+          <td class="col-link"><a href="https://play.google.com/store/apps/details?id=com.org.futurepeek" target="_blank" rel="noopener">Play ↗</a></td>
+        </tr>
+        <tr>
+          <td class="col-yr">2023</td>
+          <td class="col-proj">Alumni RHSS APDJ<small>5K+ alumni network</small></td>
+          <td class="col-role">Social-network feature dev</td>
+          <td class="col-stack">Flutter · Firebase</td>
+          <td class="col-link"><a href="https://play.google.com/store/apps/details?id=com.railwayhsschoolapdj" target="_blank" rel="noopener">Play ↗</a></td>
+        </tr>
+        <tr>
+          <td class="col-yr">2023</td>
+          <td class="col-proj">QuickDock<small>Practo-style · closed source</small></td>
+          <td class="col-role">App engineer · booking + video consult</td>
+          <td class="col-stack">Flutter · Firebase Auth · Razorpay · video calling</td>
+          <td class="col-link"><span class="badge-muted">Closed</span></td>
+        </tr>
+
+        <!-- ── DROPDOWN ── -->
+        <tr class="group-start">
+          <td colspan="5" class="group-label">Dropdown — 2023 · Company sunset</td>
+        </tr>
+        <tr>
+          <td class="col-yr">2023</td>
+          <td class="col-proj">Vibey (vibey.space)</td>
+          <td class="col-role">First Flutter Web build</td>
+          <td class="col-stack">Flutter + Flutter Web · listings · chat · location search</td>
+          <td class="col-link"><span class="badge-muted">Sunset</span></td>
+        </tr>
+        <tr>
+          <td class="col-yr">2023</td>
+          <td class="col-proj">Dropdown<small>Influencer–brand marketplace</small></td>
+          <td class="col-role">Chat + listings feature dev</td>
+          <td class="col-stack">Flutter · Firebase · influencer-brand chat</td>
+          <td class="col-link"><span class="badge-muted">Sunset</span></td>
+        </tr>
+
+        <!-- ── LOTTLE ── -->
+        <tr class="group-start">
+          <td colspan="5" class="group-label">Lottle — 2022 · Company sunset</td>
+        </tr>
+        <tr>
+          <td class="col-yr">2022</td>
+          <td class="col-proj">Lottle<small>Pet-care · adoption + vet + commerce</small></td>
+          <td class="col-role">Mobile intern · 6 months</td>
+          <td class="col-stack">Flutter · Firebase</td>
+          <td class="col-link"><span class="badge-muted">Sunset</span></td>
+        </tr>
+
+        <!-- ── KRISHWORKS ── -->
+        <tr class="group-start">
+          <td colspan="5" class="group-label">Krishworks — 2022</td>
+        </tr>
+        <tr>
+          <td class="col-yr">2022</td>
+          <td class="col-proj">Englishioh (was Faris)<small>Arabic / English · RTL · TTS</small></td>
+          <td class="col-role">Sole mobile developer</td>
+          <td class="col-stack">Flutter · Firebase · 10+ learning games · RTL support</td>
+          <td class="col-link"><a href="https://krishworkstech.com/projects/app-for-english-communication-and-fluency/#contactus" target="_blank" rel="noopener">Site ↗</a></td>
+        </tr>
+        <tr>
+          <td class="col-yr">2022</td>
+          <td class="col-proj">Speaklifi (was SpeaklyFI)</td>
+          <td class="col-role">Contributor · 5-level progression</td>
+          <td class="col-stack">Flutter · Firebase · AI voice recognition · gamification</td>
+          <td class="col-link"><a href="https://krishworkstech.com/projects/ios-mobile-app-for-english-communication/" target="_blank" rel="noopener">Site ↗</a></td>
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+
+    <p style="margin-top:28px; max-width:52rem; font-size:0.82rem; line-height:1.8; color:rgba(0,0,0,0.45);">
+      17 shipped projects · 06 companies · 08 live on Play / App Store · 02 Medjeex internal · 04 sunset (Dropdown, Vibey, Lottle, Bodhi stint) · 01 closed-source (QuickDock). Every link verified June 2026.
+    </p>
+  </section>
+
+</main>
+
+<footer class="swiss-footer">
+  <div class="swiss-footer-name">Toushik / Banik</div>
+  <div class="swiss-footer-grid">
+    <div class="swiss-footer-col">
+      <h4>Index</h4>
+      <ul>
+        <li><a href="index.html">00 / Home</a></li>
+        <li><a href="about.html">01 / About</a></li>
+        <li><a href="work.html">02 / Work</a></li>
+        <li><a href="systems.html">03 / Systems</a></li>
+        <li><a href="learning.html">04 / Education</a></li>
+        <li><a href="experience.html">05 / Experience</a></li>
+      </ul>
+    </div>
+    <div class="swiss-footer-col">
+      <h4>Work</h4>
+      <ul>
+        <li><a href="case-medjeex.html">Medjeex case</a></li>
+        <li><a href="case-haatak.html">Haatak case</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.medjeex.medjeex_app" target="_blank" rel="noopener">Medjeex Student ↗</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.medjeex.parent.app" target="_blank" rel="noopener">Medjeex Guardian ↗</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.copuchin.jarapp" target="_blank" rel="noopener">Haatak ↗</a></li>
+      </ul>
+    </div>
+    <div class="swiss-footer-col">
+      <h4>Profiles</h4>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/toushikbanik/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        <li><a href="https://github.com/ToushikBanik123" target="_blank" rel="noopener">GitHub ↗</a></li>
+        <li><a href="https://leetcode.com/u/toushikbanikeducation/" target="_blank" rel="noopener">LeetCode ↗</a></li>
+        <li><a href="https://takeuforward.org/profile/Toushik" target="_blank" rel="noopener">TakeUForward ↗</a></li>
+      </ul>
+    </div>
+    <div class="swiss-footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:toushikbanikofficial@gmail.com" data-copy-email>toushikbanikofficial@gmail.com</a></li>
+        <li><a href="tel:+919800515347">+91 9800515347</a></li>
+        <li>Delhi NCR / India</li>
+        <li>Open to relocate</li>
+      </ul>
+    </div>
+  </div>
+  <div class="swiss-footer-bottom">
+    <span>© 2026 / Toushik Banik</span>
+    <span>Built with HTML + Grid</span>
+    <span>Delhi NCR / India</span>
+  </div>
+</footer>
+
+<script src="assets/swiss.js"></script>
+</body>
+</html>

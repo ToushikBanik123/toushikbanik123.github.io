@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Systems — Toushik Banik</title>
+  <meta name="description" content="The technical layers I keep returning to: realtime media, offline-first data sync, AI-augmented UX. Plus what I won't do." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/swiss.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+</head>
+<body class="swiss-noise">
+
+<header class="swiss-nav">
+  <div class="swiss-nav-inner">
+    <a href="index.html" class="swiss-monogram" aria-label="Home">TB</a>
+    <nav class="swiss-nav-links" aria-label="Primary">
+      <a href="index.html" class="swiss-nav-link" data-hover="00 / Index"><span>00 / Index</span></a>
+      <a href="about.html" class="swiss-nav-link" data-hover="01 / About"><span>01 / About</span></a>
+      <a href="work.html" class="swiss-nav-link" data-hover="02 / Work"><span>02 / Work</span></a>
+      <a href="systems.html" class="swiss-nav-link" data-hover="03 / Systems"><span>03 / Systems</span></a>
+      <a href="learning.html" class="swiss-nav-link" data-hover="04 / Education"><span>04 / Education</span></a>
+      <a href="experience.html" class="swiss-nav-link" data-hover="05 / Experience"><span>05 / Experience</span></a>
+    </nav>
+    <button id="swiss-hamburger" class="swiss-hamburger" aria-label="Menu">Menu <span class="swiss-hamburger-icon"><span></span><span></span><span></span></span></button>
+    <a href="mailto:toushikbanikofficial@gmail.com" class="swiss-nav-cta">→ Contact</a>
+  </div>
+</header>
+
+<div id="swiss-mobile-menu" class="swiss-mobile-menu">
+  <button id="swiss-mobile-close" class="swiss-mobile-close">Close ×</button>
+  <a href="index.html">00 / Index</a>
+  <a href="about.html">01 / About</a>
+  <a href="work.html">02 / Work</a>
+  <a href="systems.html">03 / Systems</a>
+  <a href="learning.html">04 / Education</a>
+  <a href="experience.html">05 / Experience</a>
+  <a href="mailto:toushikbanikofficial@gmail.com">→ Contact</a>
+</div>
+
+<main class="container-x" style="padding-top:48px;">
+
+  <div class="page-marker">
+    <span class="page-marker-num">05 / Systems</span>
+    <span class="page-marker-title">The layers I return to</span>
+  </div>
+
+  <h1 class="t-h1" style="margin:0 0 32px;">Realtime. /<br/>Offline-first. /<br/>AI-augmented.</h1>
+  <p class="t-body-lg" style="max-width:50rem; margin:0 0 64px;">
+    Across six companies, I keep architecting the same three technical layers: live media, offline data sync, and AI content pipelines. Here is how I approach these systems, and the hard lessons learned from running them in production.
+  </p>
+
+
+  <!-- 05.01 REALTIME -->
+  <section style="padding:64px 0; border-top:4px solid var(--swiss-black); border-bottom:2px solid var(--swiss-black);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:24px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">05.01 / Realtime &amp; Media</span>
+      <span class="t-label">Socket.IO · WebRTC · Mediasoup · Agora</span>
+    </div>
+
+    <h2 class="t-h2" style="margin:0 0 40px;">Live media: / where fragile / architectures break.</h2>
+
+    <div class="grid-7-5">
+      <div>
+        <p class="t-body-lg">
+          The complexity of real-time systems doesn't lie in the SDK integrations—it lies in managing the in-between states. What happens when a participant drops due to network jitter? How does Picture-in-Picture (PiP) behave when the OS terminates your activity? Who truly owns the signaling contract if you need to swap the SFU later? These are the edge cases I engineer for.
+        </p>
+        <p class="t-body-lg" style="margin-top:20px;">
+          I have architected four distinct real-time stacks in production. I deployed a Mediasoup SFU at Medjeex for 30-student live classes to maintain total signaling control. I integrated Agora RTC for Ayla Voice Chat's multi-user audio rooms. I built WebRTC with custom signaling for QuickDock's telemedicine consults. I implemented PiP-mode adaptive streaming for JagoBd's 10M+ Android TV/mobile install base. Every stack was chosen deliberately to optimize for cost, control, latency, or platform reach.
+        </p>
+      </div>
+
+      <aside class="col-rule">
+        <div class="t-label" style="margin-bottom:16px; color:var(--swiss-accent);">Where I've shipped this</div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:16px; font-size:0.95rem;">
+          <li style="border-bottom:1px solid var(--swiss-black); padding-bottom:14px;"><strong>Medjeex live classes</strong> &mdash; Mediasoup SFU + flutter_webrtc + Socket.IO, PiP, foreground service.</li>
+          <li style="border-bottom:1px solid var(--swiss-black); padding-bottom:14px;"><strong>Ayla Voice Chat</strong> &mdash; Agora RTC multi-user voice rooms + Socket.IO messaging.</li>
+          <li style="border-bottom:1px solid var(--swiss-black); padding-bottom:14px;"><strong>QuickDock</strong> &mdash; WebRTC video consults, doctor-availability scheduling.</li>
+          <li style="border-bottom:1px solid var(--swiss-black); padding-bottom:14px;"><strong>JagoBd Android TV</strong> &mdash; PiP adaptive streaming on 10M+ install base.</li>
+          <li><strong>Bodhi astrology</strong> &mdash; Socket.IO live-availability indicators and chat with astrologers.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+
+  <!-- 05.02 OFFLINE -->
+  <section style="padding:64px 0; border-bottom:2px solid var(--swiss-black);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:24px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">05.02 / Offline-first</span>
+      <span class="t-label">Isar · Repository · AES</span>
+    </div>
+
+    <h2 class="t-h2" style="margin:0 0 40px;">Treat local / as truth. The / API is a peer.</h2>
+
+    <div class="grid-7-5">
+      <div>
+        <p class="t-body-lg">
+          Most applications treat the backend API as the absolute source of truth and the local database as a fragile cache. That mental model fails the moment the network drops. I build systems that treat the local database as the truth, and the API as merely one of many peers allowed to mutate it. The UI never cares if the data is fresh—managing that state is strictly the Repository layer's job.
+        </p>
+        <p class="t-body-lg" style="margin-top:20px;">
+          At Medjeex, this manifests as a self-test engine that securely pre-downloads 500-question packs, grades them deterministically offline, and syncs the results via a replayable background queue. It manifests as AES-encrypted study material that students can reliably access on a train. It manifests as Isar schemas that migrate seamlessly across years of product evolution.
+        </p>
+      </div>
+
+      <aside class="col-rule">
+        <div class="t-label" style="margin-bottom:16px; color:var(--swiss-accent);">Where I've shipped this</div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:16px; font-size:0.95rem;">
+          <li style="border-bottom:1px solid var(--swiss-black); padding-bottom:14px;"><strong>Medjeex self-test engine</strong> &mdash; ahead-of-time download, local grading, post-session sync.</li>
+          <li style="border-bottom:1px solid var(--swiss-black); padding-bottom:14px;"><strong>Medjeex notes &amp; PDFs</strong> &mdash; AES-encrypted offline delivery via Syncfusion PDF viewer.</li>
+          <li style="border-bottom:1px solid var(--swiss-black); padding-bottom:14px;"><strong>FuturePeak MCQ portal</strong> &mdash; offline question packs for on-demand testing.</li>
+          <li><strong>Course downloads</strong> &mdash; encrypted offline lecture access with re-validation on reconnect.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+
+  <!-- 05.03 AI -->
+  <section style="padding:64px 0; border-bottom:2px solid var(--swiss-black);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:24px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">05.03 / AI-augmented UX</span>
+      <span class="t-label">RAG · prompt engineering · content pipelines</span>
+    </div>
+
+    <h2 class="t-h2" style="margin:0 0 40px;">Generate / once. Consume / infinitely.</h2>
+
+    <div class="grid-7-5">
+      <div>
+        <p class="t-body-lg">
+          A naive AI wrapper makes an LLM API call every time a user taps a button. In this model, operating costs scale linearly with active users, latency degrades with model size, and the UI is forced to show loading spinners. Instead, I architect AI content pipelines that generate artifacts <em>once</em> on the server during ingestion, allowing the mobile clients to consume them instantly as cached static assets.
+        </p>
+        <p class="t-body-lg" style="margin-top:20px;">
+          At Medjeex, I engineered a pipeline that processed 2,000+ lecture recordings in a single pass: transcribe → summarize → extract MCQs → extract flashcards → synthesize two-voice podcast TTS. When a student opens a lecture, the assets are already compiled, instantly available, and ready for offline use. The only live LLM inference in the entire app is the RAG-powered <code>ai_test_mentor</code> that explains missed questions—and even that is strictly bounded, cached, and optional.
+        </p>
+      </div>
+
+      <aside class="col-rule">
+        <div class="t-label" style="margin-bottom:16px; color:var(--swiss-accent);">Where I've shipped this</div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:16px; font-size:0.95rem;">
+          <li style="border-bottom:1px solid var(--swiss-black); padding-bottom:14px;"><strong>Medjeex content pipeline</strong> &mdash; 2,000+ lectures → notes / MCQs / podcast TTS.</li>
+          <li style="border-bottom:1px solid var(--swiss-black); padding-bottom:14px;"><strong>ai_test_mentor module</strong> &mdash; RAG-style explainer + quiz loop inside test analysis.</li>
+          <li style="border-bottom:1px solid var(--swiss-black); padding-bottom:14px;"><strong>Doubt module first-pass AI</strong> &mdash; AI responds first, peer/teacher escalation.</li>
+          <li style="border-bottom:1px solid var(--swiss-black); padding-bottom:14px;"><strong>Two-voice podcast TTS</strong> &mdash; just_audio player for AI-generated lecture podcasts.</li>
+          <li><strong>Krishworks Speaklifi</strong> &mdash; AI voice-recognition feedback loops for pronunciation learning.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+
+  <!-- 05.04 WHAT I WON'T DO -->
+  <section style="padding:64px 0; border-bottom:4px solid var(--swiss-black); background:var(--swiss-black); color:var(--swiss-white);">
+    <div style="padding:0 24px; max-width:1440px; margin:0 auto;">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:24px; flex-wrap:wrap; gap:12px;">
+        <span class="t-section-num">05.04 / Manifesto</span>
+        <span class="t-label" style="color:rgba(255,255,255,0.5);">What I won't do</span>
+      </div>
+
+      <h2 class="t-h2" style="margin:0 0 40px; color:var(--swiss-white);">Things I won't / build, even if / asked.</h2>
+
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:2px solid var(--swiss-white); border-bottom:2px solid var(--swiss-white);">
+        <div class="hover-cell-dark" style="padding:32px 24px; border-right:1px solid rgba(255,255,255,0.2);">
+          <div class="t-section-num">01</div>
+          <h3 class="t-h3" style="margin:8px 0 10px;">Chat wrappers</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55; color:rgba(255,255,255,0.7);">If the whole feature is a textbox sending raw prompts to an LLM, that's not a feature, that's a bill.</p>
+        </div>
+        <div class="hover-cell-dark" style="padding:32px 24px; border-right:1px solid rgba(255,255,255,0.2);">
+          <div class="t-section-num">02</div>
+          <h3 class="t-h3" style="margin:8px 0 10px;">Fake metrics</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55; color:rgba(255,255,255,0.7);">No "improved engagement 32%" without a dashboard I can show. The receipts have to hold up.</p>
+        </div>
+        <div class="hover-cell-dark" style="padding:32px 24px; border-right:1px solid rgba(255,255,255,0.2);">
+          <div class="t-section-num">03</div>
+          <h3 class="t-h3" style="margin:8px 0 10px;">Over-architecture</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55; color:rgba(255,255,255,0.7);">Clean Arch with seven layers for a CRUD screen. Repository pattern when there's one source of data. Pick the layers that earn their seat.</p>
+        </div>
+        <div class="hover-cell-dark" style="padding:32px 24px;">
+          <div class="t-section-num">04</div>
+          <h3 class="t-h3" style="margin:8px 0 10px;">Animation theatre</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55; color:rgba(255,255,255,0.7);">Springy bouncy parallax that ages the app in six months. Motion has to serve content, not the designer's reel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<footer class="swiss-footer">
+  <div class="swiss-footer-name">Toushik / Banik</div>
+  <div class="swiss-footer-grid">
+    <div class="swiss-footer-col">
+      <h4>Index</h4>
+      <ul>
+        <li><a href="index.html">00 / Home</a></li>
+        <li><a href="about.html">01 / About</a></li>
+        <li><a href="work.html">02 / Work</a></li>
+        <li><a href="systems.html">03 / Systems</a></li>
+        <li><a href="learning.html">04 / Education</a></li>
+        <li><a href="experience.html">05 / Experience</a></li>
+      </ul>
+    </div>
+    <div class="swiss-footer-col">
+      <h4>Work</h4>
+      <ul>
+        <li><a href="case-medjeex.html">Medjeex case</a></li>
+        <li><a href="case-haatak.html">Haatak case</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.medjeex.medjeex_app" target="_blank" rel="noopener">Medjeex Student ↗</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.medjeex.parent.app" target="_blank" rel="noopener">Medjeex Guardian ↗</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.copuchin.jarapp" target="_blank" rel="noopener">Haatak ↗</a></li>
+      </ul>
+    </div>
+    <div class="swiss-footer-col">
+      <h4>Profiles</h4>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/toushikbanik/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        <li><a href="https://github.com/ToushikBanik123" target="_blank" rel="noopener">GitHub ↗</a></li>
+        <li><a href="https://leetcode.com/u/toushikbanikeducation/" target="_blank" rel="noopener">LeetCode ↗</a></li>
+        <li><a href="https://takeuforward.org/profile/Toushik" target="_blank" rel="noopener">TakeUForward ↗</a></li>
+      </ul>
+    </div>
+    <div class="swiss-footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:toushikbanikofficial@gmail.com" data-copy-email>toushikbanikofficial@gmail.com</a></li>
+        <li><a href="tel:+919800515347">+91 9800515347</a></li>
+        <li>Delhi NCR / India</li>
+        <li>Open to relocate</li>
+      </ul>
+    </div>
+  </div>
+  <div class="swiss-footer-bottom">
+    <span>© 2026 / Toushik Banik</span>
+    <span>Built with HTML + Grid</span>
+    <span>Delhi NCR / India</span>
+  </div>
+</footer>
+
+<script src="assets/swiss.js"></script>
+</body>
+</html>

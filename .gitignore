@@ -1,0 +1,4 @@
+.DS_Store
+update_nav.py
+*.pyc
+__pycache__/

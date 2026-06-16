@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medjeex Guardian — Case Study — Toushik Banik</title>
+  <meta name="description" content="A parent monitoring companion for Medjeex. Consent-gated child linking, reactive ProxyProvider dashboard, real-time FCM alerts. Sole developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/swiss.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+</head>
+<body class="swiss-noise">
+
+<header class="swiss-nav">
+  <div class="swiss-nav-inner">
+    <a href="index.html" class="swiss-monogram" aria-label="Home">TB</a>
+    <nav class="swiss-nav-links" aria-label="Primary">
+      <a href="index.html" class="swiss-nav-link" data-hover="00 / Index"><span>00 / Index</span></a>
+      <a href="about.html" class="swiss-nav-link" data-hover="01 / About"><span>01 / About</span></a>
+      <a href="work.html" class="swiss-nav-link" data-hover="02 / Work"><span>02 / Work</span></a>
+      <a href="systems.html" class="swiss-nav-link" data-hover="03 / Systems"><span>03 / Systems</span></a>
+      <a href="learning.html" class="swiss-nav-link" data-hover="04 / Education"><span>04 / Education</span></a>
+      <a href="experience.html" class="swiss-nav-link" data-hover="05 / Experience"><span>05 / Experience</span></a>
+    </nav>
+    <button id="swiss-hamburger" class="swiss-hamburger" aria-label="Menu">Menu <span class="swiss-hamburger-icon"><span></span><span></span><span></span></span></button>
+    <a href="mailto:toushikbanikofficial@gmail.com" class="swiss-nav-cta">→ Contact</a>
+  </div>
+</header>
+
+<div id="swiss-mobile-menu" class="swiss-mobile-menu">
+  <button id="swiss-mobile-close" class="swiss-mobile-close">Close ×</button>
+  <a href="index.html">00 / Index</a>
+  <a href="about.html">01 / About</a>
+  <a href="work.html">02 / Work</a>
+  <a href="systems.html">03 / Systems</a>
+  <a href="learning.html">04 / Education</a>
+  <a href="experience.html">05 / Experience</a>
+  <a href="mailto:toushikbanikofficial@gmail.com">→ Contact</a>
+</div>
+
+<main class="container-x" style="padding-top:48px;">
+
+  <div class="page-marker">
+    <span class="page-marker-num">Case 02</span>
+    <span class="page-marker-title">Medjeex Guardian</span>
+  </div>
+
+  <h1 class="t-h1" style="margin:0 0 32px;">A second / screen. / For the / parent.</h1>
+  <p class="t-body-lg" style="max-width:48rem; margin:0 0 56px;">
+    Medjeex Guardian is the parent-facing companion to the Medjeex student platform — a separate Flutter application that gives parents full visibility into their child's attendance, test performance, and live study activity, without touching the student's own app experience.
+  </p>
+
+  <!-- Meta -->
+  <section style="margin-bottom:80px; border-top:4px solid var(--swiss-black); border-bottom:4px solid var(--swiss-black);">
+    <table class="swiss-table" style="margin:0;">
+      <tbody>
+        <tr>
+          <td class="col-year" style="width:200px;">Role</td>
+          <td class="col-name">Sole Flutter developer</td>
+        </tr>
+        <tr>
+          <td class="col-year">Year</td>
+          <td class="col-name">2025</td>
+        </tr>
+        <tr>
+          <td class="col-year">Stack</td>
+          <td class="col-stack" style="font-size:0.9rem;">Flutter · Provider · ChangeNotifierProxyProvider · go_router · fl_chart · FCM · flutter_secure_storage · Isar</td>
+        </tr>
+        <tr>
+          <td class="col-year">Domain</td>
+          <td class="col-name">EdTech · Companion / monitoring app</td>
+        </tr>
+        <tr>
+          <td class="col-year">Live</td>
+          <td><a href="https://play.google.com/store/apps/details?id=com.medjeex.parent.app" target="_blank" rel="noopener" class="t-accent" style="font-weight:700;">Play Store ↗</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- The decision -->
+  <section style="padding:64px 0; border-bottom:2px solid var(--swiss-black);">
+    <div style="margin-bottom:24px;">
+      <span class="t-section-num">01 / The decision</span>
+    </div>
+    <div class="grid-5-7">
+      <h2 class="t-h2" style="margin:0;">Separate / app, / not a / mode.</h2>
+      <div class="col-rule">
+        <p class="t-body-lg">
+          Most platforms bolt a parent view onto the student app — a settings screen, a web portal, a restricted login. That approach saves time but creates a compromised experience for both users: the student's app grows heavier, and the parent gets a surface that was never designed for them.
+        </p>
+        <p class="t-body-lg" style="margin-top:20px;">
+          The decision here was different: build a separate Flutter application that connects to the same production backend at <code>api.medjeex.com</code> through a dedicated parent-scoped API surface. The parent gets a first-class product. The student app stays lean. The backend enforces the boundary — a parent cannot query a child's dashboard without an active link that the student themselves approved.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section style="padding:64px 0; border-bottom:2px solid var(--swiss-black);">
+    <div style="margin-bottom:24px;">
+      <span class="t-section-num">02 / Architecture</span>
+    </div>
+    <div class="grid-5-7">
+      <h2 class="t-h2" style="margin:0;">Core / features. / Mirrored / deliberately.</h2>
+      <div class="col-rule">
+        <p class="t-body-lg">
+          The codebase follows the same <code>core/features</code> split as the main Medjeex student app — a stated constraint documented in <code>docs/implementation_plan.md</code>. The <code>core/</code> layer provides the <code>ApiClient</code>, <code>AppRouter</code>, a multi-layered design token system (<code>app_colors</code>, <code>app_typography</code>, <code>app_spacing</code>, <code>app_shadows</code>, <code>app_breakpoints</code>), and shared services. Six feature verticals sit under <code>features/</code>: <strong>auth</strong>, <strong>child</strong>, <strong>dashboard</strong>, <strong>home</strong>, <strong>notifications</strong>, and <strong>profile</strong>.
+        </p>
+        <p class="t-body-lg" style="margin-top:20px;">
+          Every feature follows the same three-layer pattern: <code>models/</code> (plain Dart data classes with <code>fromJson</code> factories), <code>repositories/</code> (raw API call logic), and <code>viewmodels/</code> (<code>ChangeNotifier</code> state containers). This consistency means any engineer familiar with the student app can navigate the parent app without a re-orientation period — which is precisely the point of mirroring.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The hard problem -->
+  <section style="padding:64px 0; border-bottom:2px solid var(--swiss-black);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:32px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">03 / The hard problem</span>
+      <span class="t-label">Multi-child context</span>
+    </div>
+    <h2 class="t-h2" style="margin:0 0 32px;">One parent. / Multiple / children. / One active / context.</h2>
+
+    <div style="border-top:2px solid var(--swiss-black); border-bottom:2px solid var(--swiss-black);">
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0;">
+        <div style="padding:28px 24px; border-right:1px solid var(--swiss-black);">
+          <div class="t-section-num">01</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">ProxyProvider</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;"><code>DashboardViewModel</code> is registered as a <code>ChangeNotifierProxyProvider&lt;ChildViewModel, DashboardViewModel&gt;</code>. When the active child changes, the dashboard re-fetches automatically — zero manual orchestration in the UI.</p>
+        </div>
+        <div style="padding:28px 24px; border-right:1px solid var(--swiss-black);" class="swiss-dots">
+          <div class="t-section-num">02</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Per-child cache</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;">A <code>Map&lt;String, DashboardSummary&gt;</code> keyed by child ID. Switching from Child A to Child B doesn't discard Child A's data — it stays cached for instant restoration on the next switch.</p>
+        </div>
+        <div style="padding:28px 24px;">
+          <div class="t-section-num">03</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Parallel fan-out</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;"><code>Future.wait</code> fires 6 simultaneous API calls — attendance, watch time, DPP status, test performance, test trend, test history — rather than chaining them serially.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consent-gated linking -->
+  <section style="padding:64px 0; border-bottom:2px solid var(--swiss-black);">
+    <div style="margin-bottom:24px;">
+      <span class="t-section-num">04 / Consent gate</span>
+    </div>
+    <div class="grid-5-7">
+      <h2 class="t-h2" style="margin:0;">The OTP / goes to / the child, / not the / parent.</h2>
+      <div class="col-rule">
+        <p class="t-body-lg">
+          When a parent initiates a child-link by entering the student's phone number, the backend sends the OTP to <strong>the student's phone</strong>. The parent must collect that code from the child and submit it to complete the link.
+        </p>
+        <p class="t-body-lg" style="margin-top:20px;">
+          This is not a UX quirk — it's a deliberate consent gate. A student cannot have their academic data exposed to a parent account without knowing about it and actively participating. The <code>LinkedChild</code> model captures the lifecycle with a <code>status</code> field (<code>pending</code>, <code>active</code>, <code>revoked</code>) and a <code>linkedVia</code> field. The student retains the ability to revoke the link at any time.
+        </p>
+        <p class="t-body-lg" style="margin-top:20px;">
+          The backend enforces this at the data layer too — a parent's JWT is scoped to the parent user, and the server validates that the requesting parent is actually linked to the queried child before returning any dashboard data. The mobile client cannot sidestep this even with a valid token.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I built -->
+  <section style="padding:64px 0; border-bottom:2px solid var(--swiss-black);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:32px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">05 / What I built</span>
+      <span class="t-label">All screens</span>
+    </div>
+    <h2 class="t-h2" style="margin:0 0 32px;">The full / parent / surface.</h2>
+
+    <div style="border-top:2px solid var(--swiss-black); border-bottom:2px solid var(--swiss-black);">
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0;">
+        <div style="padding:28px 24px; border-right:1px solid var(--swiss-black); border-bottom:1px solid var(--swiss-black);">
+          <div class="t-section-num">01</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Auth</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;">OTP login, JWT secure storage, autoLogin with credential fallback, route guards.</p>
+        </div>
+        <div style="padding:28px 24px; border-right:1px solid var(--swiss-black); border-bottom:1px solid var(--swiss-black);" class="swiss-diagonal">
+          <div class="t-section-num">02</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Child linking</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;">Consent-gated OTP flow. Multi-child support. Link, verify, unlink lifecycle.</p>
+        </div>
+        <div style="padding:28px 24px; border-bottom:1px solid var(--swiss-black);">
+          <div class="t-section-num">03</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Home</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;">Context-switching header, activity timeline (lectures / tests / DPP), quick-nav cards, today's schedule.</p>
+        </div>
+        <div style="padding:28px 24px; border-right:1px solid var(--swiss-black);" class="swiss-dots">
+          <div class="t-section-num">04</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Analytics</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;">Watch time bar charts, test accuracy trend line, subject radar chart, DPP completion, attendance calendar.</p>
+        </div>
+        <div style="padding:28px 24px; border-right:1px solid var(--swiss-black);">
+          <div class="t-section-num">05</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Attendance</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;">Online lectures + offline physical check-in/out. Dual delivery mode model. Per-course filtering.</p>
+        </div>
+        <div style="padding:28px 24px;">
+          <div class="t-section-num">06</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Notifications</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;">FCM integration, local ring-buffer (100 messages), token dedup, background isolate handler.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engineering decisions -->
+  <section style="padding:64px 0; border-bottom:2px solid var(--swiss-black);">
+    <div style="margin-bottom:24px;">
+      <span class="t-section-num">06 / Engineering decisions</span>
+    </div>
+
+    <div class="decision">
+      <div class="decision-label">State · ProxyProvider pattern</div>
+      <div class="decision-title">Reactive dashboard, zero manual wiring</div>
+      <div class="decision-body">Rather than having the UI trigger a dashboard reload on child switch, <code>DashboardViewModel</code> is declared as dependent on <code>ChildViewModel</code> via <code>ChangeNotifierProxyProvider</code>. The framework calls <code>updateActiveChild()</code> automatically whenever <code>ChildViewModel</code> notifies — making the active child the single source of truth without any coordinator logic in the view layer.</div>
+    </div>
+
+    <div class="decision">
+      <div class="decision-label">Navigation · go_router + StatefulShellRoute</div>
+      <div class="decision-title">Tab state preserved independently</div>
+      <div class="decision-body"><code>StatefulShellRoute.indexedStack</code> gives each of the three bottom-nav tabs its own <code>NavigatorKey</code>. Switching from Analytics back to Home does not destroy and recreate the Home widget tree — scroll position and loaded data survive. Deep-drill views (test details, attendance, offline reports) are registered on the root navigator key, rendering modally above the bottom bar rather than inside a tab.</div>
+    </div>
+
+    <div class="decision">
+      <div class="decision-label">Data · Dual attendance model</div>
+      <div class="decision-title">Online lectures and offline check-ins in one model</div>
+      <div class="decision-body">The Medjeex platform supports both online-only and hybrid (physical coaching centre) delivery. <code>AttendanceReport</code> carries both online fields (<code>totalScheduled</code>, <code>totalAttended</code>, <code>currentStreak</code>) and offline fields (<code>totalPresent</code>, <code>totalAbsent</code>, <code>checkIn</code>/<code>checkOut</code> timestamps). The backend switches response shape based on the course's <code>deliveryMode</code>, and the model handles both without conditional branching in the UI.</div>
+    </div>
+
+    <div class="decision">
+      <div class="decision-label">Notifications · FCM + SharedPreferences ring buffer</div>
+      <div class="decision-title">Persistent notification inbox, no extra database</div>
+      <div class="decision-body">All incoming FCM messages (foreground, background, and app-launch) are written to a capped 100-item ring buffer in <code>SharedPreferences</code> by a <code>@pragma('vm:entry-point')</code> background handler — the required pattern for Flutter's FCM isolate model. <code>NotificationViewModel</code> reads this same key and exposes an <code>unreadCount</code> getter for the bell badge. FCM token registration is deduplicated by hash — the token only syncs to the backend when it changes, avoiding a race with the auth flow on startup.</div>
+    </div>
+  </section>
+
+  <!-- Outcomes -->
+  <section style="padding:64px 0; border-bottom:4px solid var(--swiss-black);">
+    <div style="margin-bottom:32px;">
+      <span class="t-section-num">07 / Outcomes</span>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0; border-top:2px solid var(--swiss-black); border-bottom:2px solid var(--swiss-black);">
+      <div style="padding:32px 24px; border-right:1px solid var(--swiss-black);">
+        <div class="swiss-stat-num">01</div>
+        <div class="swiss-stat-label">Developer, start to Play Store</div>
+      </div>
+      <div style="padding:32px 24px; border-right:1px solid var(--swiss-black);" class="swiss-grid-pattern">
+        <div class="swiss-stat-num">06</div>
+        <div class="swiss-stat-label">Feature verticals shipped</div>
+      </div>
+      <div style="padding:32px 24px;">
+        <div class="swiss-stat-num">18</div>
+        <div class="swiss-stat-label">Stitch screen designs implemented</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section style="padding:64px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px;">
+    <a href="case-medjeex.html" class="btn-secondary">← Previous: Medjeex Student</a>
+    <a href="case-haatak.html" class="btn-primary">Next: Haatak →</a>
+  </section>
+
+</main>
+
+<footer class="swiss-footer">
+  <div class="swiss-footer-name">Toushik / Banik</div>
+  <div class="swiss-footer-grid">
+    <div class="swiss-footer-col">
+      <h4>Index</h4>
+      <ul>
+        <li><a href="index.html">00 / Home</a></li>
+        <li><a href="about.html">01 / About</a></li>
+        <li><a href="work.html">02 / Work</a></li>
+        <li><a href="systems.html">03 / Systems</a></li>
+        <li><a href="learning.html">04 / Education</a></li>
+        <li><a href="experience.html">05 / Experience</a></li>
+      </ul>
+    </div>
+    <div class="swiss-footer-col">
+      <h4>Work</h4>
+      <ul>
+        <li><a href="case-medjeex.html">Medjeex case</a></li>
+        <li><a href="case-guardian.html">Guardian case</a></li>
+        <li><a href="case-haatak.html">Haatak case</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.medjeex.medjeex_app" target="_blank" rel="noopener">Medjeex Student ↗</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.medjeex.parent.app" target="_blank" rel="noopener">Medjeex Guardian ↗</a></li>
+      </ul>
+    </div>
+    <div class="swiss-footer-col">
+      <h4>Profiles</h4>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/toushikbanik/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        <li><a href="https://github.com/ToushikBanik123" target="_blank" rel="noopener">GitHub ↗</a></li>
+        <li><a href="https://leetcode.com/u/toushikbanikeducation/" target="_blank" rel="noopener">LeetCode ↗</a></li>
+        <li><a href="https://takeuforward.org/profile/Toushik" target="_blank" rel="noopener">TakeUForward ↗</a></li>
+      </ul>
+    </div>
+    <div class="swiss-footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:toushikbanikofficial@gmail.com" data-copy-email>toushikbanikofficial@gmail.com</a></li>
+        <li><a href="tel:+919800515347">+91 9800515347</a></li>
+        <li>Delhi NCR / India</li>
+        <li>Open to relocate</li>
+      </ul>
+    </div>
+  </div>
+  <div class="swiss-footer-bottom">
+    <span>© 2026 / Toushik Banik</span>
+    <span>Built with HTML + Grid</span>
+    <span>Delhi NCR / India</span>
+  </div>
+</footer>
+
+<script src="assets/swiss.js"></script>
+</body>
+</html>

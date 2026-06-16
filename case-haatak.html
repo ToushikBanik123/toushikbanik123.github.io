@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haatak Case Study — Toushik Banik</title>
+  <meta name="description" content="A SafeGold-backed digital gold platform. Full UI rebuild, Razorpay integration, 10,000+ downloads. Sole UI developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/swiss.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <style>
+    .hover-cell {
+      transition: background 0.15s linear, color 0.15s linear;
+      cursor: default;
+    }
+    .hover-cell:hover {
+      background: var(--swiss-accent) !important;
+      color: var(--swiss-white);
+    }
+    .hover-cell:hover .t-section-num,
+    .hover-cell:hover .swiss-stat-label,
+    .hover-cell:hover p {
+      color: rgba(255,255,255,0.8);
+    }
+    .hover-cell:hover .t-h3,
+    .hover-cell:hover .swiss-stat-num {
+      color: var(--swiss-white);
+    }
+  </style>
+</head>
+<body class="swiss-noise">
+
+<header class="swiss-nav">
+  <div class="swiss-nav-inner">
+    <a href="index.html" class="swiss-monogram" aria-label="Home">TB</a>
+    <nav class="swiss-nav-links" aria-label="Primary">
+      <a href="index.html" class="swiss-nav-link" data-hover="00 / Index"><span>00 / Index</span></a>
+      <a href="about.html" class="swiss-nav-link" data-hover="01 / About"><span>01 / About</span></a>
+      <a href="work.html" class="swiss-nav-link" data-hover="02 / Work"><span>02 / Work</span></a>
+      <a href="systems.html" class="swiss-nav-link" data-hover="03 / Systems"><span>03 / Systems</span></a>
+      <a href="learning.html" class="swiss-nav-link" data-hover="04 / Education"><span>04 / Education</span></a>
+      <a href="experience.html" class="swiss-nav-link" data-hover="05 / Experience"><span>05 / Experience</span></a>
+    </nav>
+    <button id="swiss-hamburger" class="swiss-hamburger" aria-label="Menu">Menu <span class="swiss-hamburger-icon"><span></span><span></span><span></span></span></button>
+    <a href="mailto:toushikbanikofficial@gmail.com" class="swiss-nav-cta">→ Contact</a>
+  </div>
+</header>
+
+<div id="swiss-mobile-menu" class="swiss-mobile-menu">
+  <button id="swiss-mobile-close" class="swiss-mobile-close">Close ×</button>
+  <a href="index.html">00 / Index</a>
+  <a href="about.html">01 / About</a>
+  <a href="work.html">02 / Work</a>
+  <a href="systems.html">03 / Systems</a>
+  <a href="learning.html">04 / Education</a>
+  <a href="experience.html">05 / Experience</a>
+  <a href="mailto:toushikbanikofficial@gmail.com">→ Contact</a>
+</div>
+
+<main class="container-x" style="padding-top:48px;">
+
+  <div class="page-marker">
+    <span class="page-marker-num">Case 02</span>
+    <span class="page-marker-title">Haatak</span>
+  </div>
+
+  <h1 class="t-h1" style="margin:0 0 32px;">Digital Gold. /<br/>Strict Security.</h1>
+  <p class="t-body-lg" style="max-width:48rem; margin:0 0 56px;">
+    Haatak is a SafeGold-backed digital gold platform &mdash; users buy, sell and store physical gold inside the app. I came in as the sole UI developer on a full rebuild of the user-facing surface while the SafeGold integration stayed intact underneath.
+  </p>
+
+  <!-- Meta -->
+  <section style="margin-bottom:80px; border-top:4px solid var(--swiss-black); border-bottom:4px solid var(--swiss-black);">
+    <table class="swiss-table" style="margin:0;">
+      <tbody>
+        <tr>
+          <td class="col-year" style="width:200px;">Role</td>
+          <td class="col-name">Freelance · Sole UI developer</td>
+        </tr>
+        <tr>
+          <td class="col-year">Year</td>
+          <td class="col-name">2024</td>
+        </tr>
+        <tr>
+          <td class="col-year">Stack</td>
+          <td class="col-stack" style="font-size:0.9rem;">Flutter · Provider · Razorpay · SafeGold API · REST</td>
+        </tr>
+        <tr>
+          <td class="col-year">Outcomes</td>
+          <td class="col-name t-accent">10,000+ downloads · Live on Play Store + App Store</td>
+        </tr>
+        <tr>
+          <td class="col-year">Live</td>
+          <td><a href="https://play.google.com/store/apps/details?id=com.copuchin.jarapp" target="_blank" rel="noopener" class="t-accent" style="font-weight:700;">Play Store ↗</a> · <a href="https://apps.apple.com/in/app/haatak/id6670161811" target="_blank" rel="noopener" class="t-accent" style="font-weight:700;">App Store ↗</a> · <a href="https://www.haatak.com" target="_blank" rel="noopener" class="t-accent" style="font-weight:700;">haatak.com ↗</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Problem -->
+  <section style="padding:64px 0; border-bottom:2px solid var(--swiss-black);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:24px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">04.01 / Problem</span>
+    </div>
+    <div class="grid-5-7">
+      <h2 class="t-h2" style="margin:0;">Live app, / tired UI, / conversion / leaking.</h2>
+      <div class="col-rule">
+        <p class="t-body-lg">
+          Haatak was already live with a working SafeGold integration and real users buying gold. But the UI was carrying weight from an earlier iteration and the team wanted a full redesign &mdash; auth, buy-gold, daily savings, withdraw, refer-and-earn, spin-the-wheel rewards. The SafeGold contract was solid; only the surface needed rebuilding.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section style="padding:64px 0; border-bottom:2px solid var(--swiss-black);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:24px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">04.02 / Approach</span>
+    </div>
+    <div class="grid-5-7">
+      <h2 class="t-h2" style="margin:0;">Engineering / Trust at / Scale.</h2>
+      <div class="col-rule">
+        <p class="t-body-lg">
+          Haatak is a high-security digital gold investment platform backed by SafeGold APIs and Razorpay. Users transact and vault 24K digital gold. I was contracted to architect the complete mobile presentation layer, building out the live-ticker dashboards, strict onboarding funnels, and the critical checkout flows.
+        </p>
+        <p class="t-body-lg" style="margin-top:20px;">
+          In fintech, engineering translates directly into <strong>trust</strong>. Dropped frames or sluggish inputs destroy user confidence. The live gold price ticker had to poll and paint smoothly without blocking the main thread. The Razorpay integration demanded absolute state consistency—handling edge cases like OS interrupts, network drops mid-transaction, and webhook delays without ever putting the UI into an ambiguous state.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I built -->
+  <section style="padding:64px 0; border-bottom:2px solid var(--swiss-black);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:32px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">04.03 / What I built</span>
+      <span class="t-label">Every flow</span>
+    </div>
+    <h2 class="t-h2" style="margin:0 0 32px;">User-facing / surface, end / to end.</h2>
+
+    <div style="border-top:2px solid var(--swiss-black); border-bottom:2px solid var(--swiss-black);">
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0;">
+        <div class="hover-cell" style="padding:28px 24px; border-right:1px solid var(--swiss-black); border-bottom:1px solid var(--swiss-black);">
+          <div class="t-section-num">01</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Auth</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;">Phone + OTP login, secure token storage, session restore.</p>
+        </div>
+        <div class="hover-cell swiss-dots" style="padding:28px 24px; border-right:1px solid var(--swiss-black); border-bottom:1px solid var(--swiss-black);">
+          <div class="t-section-num">02</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Buy gold</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;">Live gold-price feed, amount-or-grams toggle, Razorpay checkout, SafeGold confirmation.</p>
+        </div>
+        <div class="hover-cell" style="padding:28px 24px; border-bottom:1px solid var(--swiss-black);">
+          <div class="t-section-num">03</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Daily savings</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;">Recurring gold-purchase plan, schedule management, history.</p>
+        </div>
+        <div class="hover-cell swiss-diagonal" style="padding:28px 24px; border-right:1px solid var(--swiss-black); border-bottom:1px solid var(--swiss-black);">
+          <div class="t-section-num">04</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Withdraw</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;">Physical delivery + sell-back flows on top of SafeGold.</p>
+        </div>
+        <div class="hover-cell" style="padding:28px 24px; border-right:1px solid var(--swiss-black); border-bottom:1px solid var(--swiss-black);">
+          <div class="t-section-num">05</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Refer &amp; earn</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;">Referral codes, share sheets, reward ledger.</p>
+        </div>
+        <div class="hover-cell" style="padding:28px 24px; border-bottom:1px solid var(--swiss-black);">
+          <div class="t-section-num">06</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Spin-the-wheel rewards</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;">Animated rewards game tied to purchase milestones.</p>
+        </div>
+        <div class="hover-cell" style="padding:28px 24px; border-right:1px solid var(--swiss-black);">
+          <div class="t-section-num">07</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Gold-price charts</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;">Historical price trends, weekly/monthly toggles, blog content.</p>
+        </div>
+        <div class="hover-cell" style="padding:28px 24px; border-right:1px solid var(--swiss-black);">
+          <div class="t-section-num">08</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Portfolio view</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;">Total holdings, transaction history, P&amp;L.</p>
+        </div>
+        <div class="hover-cell" style="padding:28px 24px;">
+          <div class="t-section-num">09</div>
+          <h3 class="t-h3" style="margin:8px 0 8px;">Profile &amp; KYC</h3>
+          <p style="margin:0; font-size:0.92rem; line-height:1.55;">Account management, KYC flow, support contact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outcomes -->
+  <section style="padding:64px 0; border-bottom:4px solid var(--swiss-black);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:32px; flex-wrap:wrap; gap:12px;">
+      <span class="t-section-num">04.04 / Outcomes</span>
+      <span class="t-label">Live receipts</span>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0; border-top:2px solid var(--swiss-black); border-bottom:2px solid var(--swiss-black);">
+      <div class="hover-cell" style="padding:32px 24px; border-right:1px solid var(--swiss-black);">
+        <div class="swiss-stat-num">10K<span style="color:var(--swiss-accent);">+</span></div>
+        <div class="swiss-stat-label">Downloads</div>
+      </div>
+      <div class="hover-cell" style="padding:32px 24px; border-right:1px solid var(--swiss-black);">
+        <div class="swiss-stat-num">02</div>
+        <div class="swiss-stat-label">App stores (Play + iOS)</div>
+      </div>
+      <div class="hover-cell" style="padding:32px 24px;">
+        <div class="swiss-stat-num">100%</div>
+        <div class="swiss-stat-label">UI surface owned solo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section style="padding:64px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px;">
+    <a href="case-medjeex.html" class="btn-secondary">← Previous: Medjeex</a>
+    <a href="work.html" class="btn-primary">→ Back to all work</a>
+  </section>
+
+</main>
+
+
+<footer class="swiss-footer">
+  <div class="swiss-footer-name">Toushik / Banik</div>
+  <div class="swiss-footer-grid">
+    <div class="swiss-footer-col">
+      <h4>Index</h4>
+      <ul>
+        <li><a href="index.html">00 / Home</a></li>
+        <li><a href="about.html">01 / About</a></li>
+        <li><a href="work.html">02 / Work</a></li>
+        <li><a href="systems.html">03 / Systems</a></li>
+        <li><a href="learning.html">04 / Education</a></li>
+        <li><a href="experience.html">05 / Experience</a></li>
+      </ul>
+    </div>
+    <div class="swiss-footer-col">
+      <h4>Work</h4>
+      <ul>
+        <li><a href="case-medjeex.html">Medjeex case</a></li>
+        <li><a href="case-haatak.html">Haatak case</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.medjeex.medjeex_app" target="_blank" rel="noopener">Medjeex Student ↗</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.medjeex.parent.app" target="_blank" rel="noopener">Medjeex Guardian ↗</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.copuchin.jarapp" target="_blank" rel="noopener">Haatak ↗</a></li>
+      </ul>
+    </div>
+    <div class="swiss-footer-col">
+      <h4>Profiles</h4>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/toushikbanik/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        <li><a href="https://github.com/ToushikBanik123" target="_blank" rel="noopener">GitHub ↗</a></li>
+        <li><a href="https://leetcode.com/u/toushikbanikeducation/" target="_blank" rel="noopener">LeetCode ↗</a></li>
+        <li><a href="https://takeuforward.org/profile/Toushik" target="_blank" rel="noopener">TakeUForward ↗</a></li>
+      </ul>
+    </div>
+    <div class="swiss-footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:toushikbanikofficial@gmail.com" data-copy-email>toushikbanikofficial@gmail.com</a></li>
+        <li><a href="tel:+919800515347">+91 9800515347</a></li>
+        <li>Delhi NCR / India</li>
+        <li>Open to relocate</li>
+      </ul>
+    </div>
+  </div>
+  <div class="swiss-footer-bottom">
+    <span>© 2026 / Toushik Banik</span>
+    <span>Built with HTML + Grid</span>
+    <span>Delhi NCR / India</span>
+  </div>
+</footer>
+
+<script src="assets/swiss.js"></script>
+</body>
+</html>
